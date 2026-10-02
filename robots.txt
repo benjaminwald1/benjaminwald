@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://benjaminwald.com/sitemap.xml
+Sitemap: https://benjaminwald.me/sitemap.xml
