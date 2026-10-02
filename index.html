@@ -162,6 +162,11 @@ header.top nav a:hover{color:var(--fg)}
 h1{font-size:clamp(40px,6vw,56px);line-height:1.05;letter-spacing:-.035em;font-weight:650;margin:0 0 16px}
 .role{font-size:18px;font-weight:500;color:var(--fg);margin:0 0 24px;letter-spacing:-.005em}
 .role .sep{color:var(--faint);margin:0 .35em}
+a.co{display:inline-flex;align-items:center;gap:.4em;text-decoration:none;vertical-align:bottom}
+a.co:hover{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a.co img.logo{display:block;flex:none;width:22px;height:22px;object-fit:contain}
+a.co img.logo[src*="officeswap"]{border-radius:23%}
+.company h3 a.co img.logo{width:24px;height:24px}
 .bio{color:var(--muted);margin:0;max-width:34em}
 .headshot{margin:0}
 .headshot img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:6px;border:1px solid var(--line);background:#f2f2f2}
@@ -196,6 +201,7 @@ footer{padding:40px 0 56px;color:var(--faint);font-size:14px}
   .headshot{order:-1;width:144px}
   .role .sep{display:none}
   .role span{display:block}
+  a.co img.logo,.company h3 a.co img.logo{width:19px;height:19px}
   section.block{padding:56px 0}
   .companies{grid-template-columns:1fr}
   .company{padding:24px}
@@ -224,7 +230,7 @@ footer{padding:40px 0 56px;color:var(--faint);font-size:14px}
     <div class="wrap">
       <div>
         <h1 id="name">Benjamin Wald</h1>
-        <p class="role"><span>Founder &amp; CEO, OfficeSwap</span><span class="sep" aria-hidden="true">|</span><span>Founder, MirRehab</span></p>
+        <p class="role"><span>Founder &amp; CEO, <a class="co" href="https://officeswap.co"><img class="logo" src="/images/logos/officeswap.png" alt="OfficeSwap logo" width="22" height="22">OfficeSwap</a></span><span class="sep" aria-hidden="true">|</span><span>Founder, <a class="co" href="https://mirrehab.com"><img class="logo" src="/images/logos/mirrehab.png" alt="MirRehab logo" width="22" height="22">MirRehab</a></span></p>
         <p class="bio">Benjamin Wald is the Founder &amp; CEO of OfficeSwap and Founder of MirRehab. His work focuses on technology, artificial intelligence, healthcare innovation, product development, and technology-driven marketplaces.</p>
       </div>
       <figure class="headshot">
@@ -241,13 +247,13 @@ footer{padding:40px 0 56px;color:var(--faint);font-size:14px}
       <h2 id="companies-h">Companies</h2>
       <ul class="companies">
         <li class="company">
-          <h3>OfficeSwap</h3>
+          <h3><a class="co" href="https://officeswap.co"><img class="logo" src="/images/logos/officeswap.png" alt="OfficeSwap logo" width="22" height="22">OfficeSwap</a></h3>
           <p class="title">Founder &amp; CEO</p>
           <p class="desc">A marketplace for flexible office space that helps companies and professionals make better use of underutilized workspaces.</p>
           <a class="visit" href="https://officeswap.co" rel="noopener">officeswap.co</a>
         </li>
         <li class="company">
-          <h3>MirRehab</h3>
+          <h3><a class="co" href="https://mirrehab.com"><img class="logo" src="/images/logos/mirrehab.png" alt="MirRehab logo" width="22" height="22">MirRehab</a></h3>
           <p class="title">Founder</p>
           <p class="desc">A technology-enabled neurorehabilitation platform designed to make rehabilitation more accessible, engaging, and effective.</p>
           <a class="visit" href="https://mirrehab.com" rel="noopener">mirrehab.com</a>
