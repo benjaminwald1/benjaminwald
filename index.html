@@ -141,7 +141,7 @@
 </script>
 
 <style>
-:root{--bg:#fff;--soft:#f6f7f9;--fg:#101114;--muted:#5f6673;--faint:#8a919e;--line:#e6e8ec;--accent:#1c9d49;--accent-soft:#e8f6ed;--r:20px}
+:root{--bg:#fff;--soft:#f6f7f9;--fg:#101114;--muted:#5f6673;--faint:#8a919e;--line:#e6e8ec;--accent:#d92b40;--accent-soft:#fdecee;--r:20px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 html,body{overflow-x:hidden}
@@ -192,6 +192,7 @@ h2.display{font-size:clamp(2.2rem,5vw,3.6rem);margin:0 0 32px}
 .card[hidden]{display:none}
 .tile{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .tile img{display:block}
+.tile.photo img{width:100%;height:100%;object-fit:cover}
 .tile .glyph{font-weight:800;font-size:68px;color:#fff;letter-spacing:-.04em}
 .tile .play{width:0;height:0;border-left:38px solid #fff;border-top:23px solid transparent;border-bottom:23px solid transparent;margin-left:10px}
 .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
@@ -223,12 +224,14 @@ details.abs p{color:var(--muted);font-size:15.5px;line-height:1.7;margin:16px 0 
 .chip.is-text{border:0;background:transparent;padding:0;color:var(--faint)}
 .statement .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:start}
 .statement h2{margin:0}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}.duo img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);aspect-ratio:16/10;object-fit:cover}
 .statement p{color:var(--muted);margin:0 0 18px}.statement p a{color:var(--fg);font-weight:600;text-decoration-color:var(--accent);text-underline-offset:3px}
 
 .rows{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
 .row{display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:baseline;padding:22px 30px;border-top:1px solid var(--line);text-decoration:none;transition:background .15s}
 .row:first-child{border-top:0}a.row:hover{background:var(--soft)}
-.row .k{color:var(--accent);font-weight:750;font-size:1.05rem}
+.row .k{color:var(--accent);font-weight:750;font-size:1.05rem;display:flex;align-items:center;gap:10px}
+.row .k .ico{width:24px;height:24px;border-radius:6px;object-fit:contain}
 .row .t{font-weight:650;font-size:1.1rem;letter-spacing:-.01em;overflow-wrap:anywhere}
 .row .t small{display:block;color:var(--faint);font-weight:500;font-size:14px;margin-top:2px}
 .row .go{color:var(--faint)}
@@ -311,15 +314,15 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
     </div>
     <div class="grid">
       <a class="card reveal" data-k="company" href="https://officeswap.co">
-        <div class="tile" style="background:linear-gradient(135deg,#e8f6ed,#cfeedb)"><img src="/images/logos/officeswap.png" width="112" height="112" alt="" style="border-radius:26px;box-shadow:0 14px 30px -14px rgba(0,0,0,.4)"></div>
+        <div class="tile photo" style="background:#f4f6f8"><img src="/images/work/officeswap.webp" width="1000" height="625" alt="OfficeSwap: every office, in use" loading="lazy"></div>
         <div class="body"><h3>OfficeSwap</h3><p>A marketplace for flexible office space that helps companies and professionals make better use of underutilized workspaces.</p><div class="meta">Founder &amp; CEO · officeswap.co</div><span class="more">Visit OfficeSwap →</span></div>
       </a>
       <a class="card reveal" data-k="company" href="https://mirrehab.com">
-        <div class="tile" style="background:linear-gradient(135deg,#e6f4f4,#d3ecec)"><img src="/images/logos/mirrehab.png" width="104" height="104" alt=""></div>
+        <div class="tile photo" style="background:#ecf0f1"><img src="/images/work/mirrehab.webp" width="1000" height="625" alt="The MirRehab headset" loading="lazy"></div>
         <div class="body"><h3>MirRehab</h3><p>A technology-enabled neurorehabilitation platform designed to make rehabilitation more accessible, engaging, and effective.</p><div class="meta">Co-Founder · mirrehab.com</div><span class="more">Visit MirRehab →</span></div>
       </a>
       <a class="card reveal" data-k="research" href="#research">
-        <div class="tile" style="background:linear-gradient(135deg,#1b2a4a,#0e1730)"><span class="glyph" style="font-size:54px">MIT URTC</span></div>
+        <div class="tile photo" style="background:#0e1630"><img src="/images/work/paper.webp" width="1200" height="750" alt="Transcriptomic Signatures of Surgical Eloquence in the Human Cortex, MIT URTC" loading="lazy"></div>
         <div class="body"><h3>Transcriptomic Signatures of Surgical Eloquence in the Human Cortex</h3><p>Does the brain tissue surgeons must protect carry a molecular signature? A spatial-null-corrected study of the Allen Human Brain Atlas.</p><div class="meta">Research · MIT URTC · with Aditya Shrivastava</div><span class="more">Read more →</span></div>
       </a>
       <a class="card reveal" data-k="profile" href="https://www.linkedin.com/in/benjaminwaldprofile">
@@ -348,6 +351,7 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
     <div class="reveal">
       <p>Benjamin Wald is the Founder &amp; CEO of OfficeSwap and Co-Founder of MirRehab.</p>
       <p>Read the founder profiles on <a href="https://officeswap.co/benjamin-wald/">officeswap.co</a> and <a href="https://mirrehab.com/team/benjamin-wald">mirrehab.com</a>.</p>
+      <div class="duo"><img src="/images/work/officeswap.webp" width="1000" height="625" alt="OfficeSwap" loading="lazy"><img src="/images/work/mirrehab.webp" width="1000" height="625" alt="MirRehab headset" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -389,8 +393,8 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
       <a class="row" href="https://medium.com/@benjaminwald"><span class="k">Medium</span><span class="t">medium.com/@benjaminwald</span><span class="go">↗</span></a>
       <a class="row" href="https://www.youtube.com/@benjaminwaldprofile"><span class="k">YouTube</span><span class="t">youtube.com/@benjaminwaldprofile</span><span class="go">↗</span></a>
       <a class="row" href="https://substack.com/@benjaminwaldprofile"><span class="k">Substack</span><span class="t">substack.com/@benjaminwaldprofile</span><span class="go">↗</span></a>
-      <a class="row" href="https://officeswap.co/benjamin-wald/"><span class="k">OfficeSwap</span><span class="t">Founder profile<small>officeswap.co/benjamin-wald</small></span><span class="go">↗</span></a>
-      <a class="row" href="https://mirrehab.com/team/benjamin-wald"><span class="k">MirRehab</span><span class="t">Founder profile<small>mirrehab.com/team/benjamin-wald</small></span><span class="go">↗</span></a>
+      <a class="row" href="https://officeswap.co/benjamin-wald/"><span class="k"><img class="ico" src="/images/logos/officeswap.png" width="24" height="24" alt="">OfficeSwap</span><span class="t">Founder profile<small>officeswap.co/benjamin-wald</small></span><span class="go">↗</span></a>
+      <a class="row" href="https://mirrehab.com/team/benjamin-wald"><span class="k"><img class="ico" src="/images/logos/mirrehab.png" width="26" height="26" alt="">MirRehab</span><span class="t">Founder profile<small>mirrehab.com/team/benjamin-wald</small></span><span class="go">↗</span></a>
     </div>
   </div>
 </section>
