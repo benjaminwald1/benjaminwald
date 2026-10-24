@@ -8,10 +8,13 @@
 <meta name="author" content="Benjamin Wald">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://benjaminwald.me/">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#f6f4ef">
 <meta name="color-scheme" content="light">
 
 <link rel="preload" as="image" href="/images/benjamin-wald.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -144,149 +147,158 @@
 </script>
 
 <style>
-:root{--bg:#fff;--soft:#f6f7f9;--fg:#101114;--muted:#5f6673;--faint:#6b7280;--line:#e6e8ec;--accent:#d92b40;--accent-soft:#fdecee;--r:20px}
+:root{--paper:#f6f4ef;--card:#fbfaf7;--ink:#14130f;--muted:#5d5a52;--faint:#7a766c;--line:#dcd8cd;--accent:#d92b40;
+--serif:"Instrument Serif","Iowan Old Style","Palatino Linotype",Georgia,serif;--sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-html,body{overflow-x:hidden}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 ui-sans-serif,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:76px;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
-.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;border-radius:8px;z-index:100}.skip:focus{left:8px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
-.display{font-family:ui-sans-serif,-apple-system,"SF Pro Display","Segoe UI",Helvetica,Arial,sans-serif;font-weight:800;letter-spacing:-.035em;line-height:1.02}
+img{max-width:100%}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;z-index:100}.skip:focus{left:8px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
 
-/* top bar */
-header.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);-webkit-backdrop-filter:saturate(180%) blur(14px);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:-.01em}
-.mark{display:flex;align-items:flex-end;gap:2px;height:16px}.mark i{display:block;width:3px;border-radius:1px;background:var(--accent)}
-.mark i:nth-child(1){height:9px}.mark i:nth-child(2){height:16px}.mark i:nth-child(3){height:12px}
-nav a{margin-left:26px;color:var(--muted);text-decoration:none;font-size:15px;transition:color .15s}nav a:hover{color:var(--fg)}
+/* header */
+header.top{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.top.scrolled{border-color:var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--serif);font-size:25px;text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+nav{display:flex;gap:28px}
+nav a{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .15s}
+nav a:hover,nav a.on{color:var(--ink)}
+nav a.on::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:1px}
 
 /* hero */
-.hero{padding:76px 0 84px;background:radial-gradient(900px 380px at 62% -60px,var(--accent-soft),transparent 70%),var(--soft);border-bottom:1px solid var(--line)}
-.hero .wrap{display:grid;grid-template-columns:minmax(260px,330px) 1fr;gap:72px;align-items:center}
-.portrait{margin:0;border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -28px rgba(16,17,20,.28);aspect-ratio:4/5}
+.hero{padding:72px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:80px;align-items:start}
+.portrait{margin:0}
+.portrait .frame{aspect-ratio:4/5;overflow:hidden;background:#e6e2d8;border:1px solid var(--line)}
 .portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 28%}
-.bars{display:flex;align-items:flex-end;gap:5px;height:34px;margin-bottom:24px;max-width:100%;overflow:hidden}
-.hero .wrap>div{min-width:0}
-.bars span{width:5px;border-radius:2px;background:var(--accent);height:var(--h);opacity:var(--o);transform-origin:bottom;animation:bar 2.2s ease-in-out infinite;animation-delay:var(--d)}
-@keyframes bar{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
-.hero h1{font-size:clamp(3.2rem,8vw,6.2rem);margin:0 0 22px}
-.lead{font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.5;color:#2a2d34;margin:0 0 14px;max-width:34em;font-weight:500}
-.sub{color:var(--muted);margin:0 0 30px;max-width:36em}.sub b{color:var(--fg);font-weight:650}
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
-.btn{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 22px;border-radius:999px;font-weight:650;font-size:15px;text-decoration:none;border:1px solid var(--line);background:#fff;transition:transform .15s,box-shadow .15s,background .15s}
-.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px -10px rgba(16,17,20,.3)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--line);border-radius:16px;max-width:620px}
-.stats div{padding:16px 20px;border-left:1px solid var(--line)}.stats div:first-child{border-left:0}
-.stats b{display:block;font-size:1.25rem;letter-spacing:-.02em;color:var(--accent)}.stats span{font-size:13px;color:var(--faint);line-height:1.35;display:block}
+.portrait figcaption{margin-top:12px;color:var(--faint)}
+.hello{display:none}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(4rem,10.5vw,8.6rem);line-height:.9;letter-spacing:-.035em;margin:-8px 0 34px}
+h1 em{font-style:italic;color:var(--accent)}
+.lead{font-size:clamp(1.25rem,2.1vw,1.6rem);line-height:1.45;margin:0 0 16px;max-width:30em;letter-spacing:-.01em}
+.sub{color:var(--muted);max-width:36em;margin:0 0 34px}
+.sub b{color:var(--ink);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:54px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 20px;border:1px solid var(--ink);font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background .15s,color .15s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.primary{background:var(--ink);color:var(--paper)}.btn.primary:hover{background:var(--accent);border-color:var(--accent)}
+.now{margin:0;border-top:1px solid var(--ink)}
+.now div{display:grid;grid-template-columns:150px 1fr auto;gap:20px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.now dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.now dd{margin:0;font-weight:500}
+.now dd small{color:var(--faint);font-weight:400;font-size:14.5px;margin-left:8px}
+.now a{text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .15s}.now a:hover{border-color:var(--accent)}
+.now .r{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em}
 
 /* sections */
-section.block{padding:96px 0;border-top:1px solid var(--line)}
-section.soft{background:var(--soft)}
-h2.display{font-size:clamp(2.2rem,5vw,3.6rem);margin:0 0 32px}
-.pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
-.pill{border:1px solid var(--line);background:var(--soft);color:var(--muted);height:38px;padding:0 18px;border-radius:999px;font:600 14px/1 inherit;cursor:pointer;transition:all .15s}
-.pill:hover{color:var(--fg)}.pill[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;text-decoration:none;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-3px);box-shadow:0 22px 40px -26px rgba(16,17,20,.35)}
+section.block{padding:104px 0;border-top:1px solid var(--ink)}
+.shead{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:baseline;margin-bottom:48px}
+.shead .idx{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--accent)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1;letter-spacing:-.03em;margin:0}
+h2 em{font-style:italic}
+.tabs{display:flex;flex-wrap:wrap;gap:6px 26px;margin:0 0 36px 170px}
+.tab{background:none;border:0;padding:6px 0;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);cursor:pointer;border-bottom:1px solid transparent}
+.tab:hover{color:var(--ink)}.tab[aria-pressed=true]{color:var(--ink);border-bottom-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}
+.card{display:flex;flex-direction:column;text-decoration:none;background:var(--card);border:1px solid var(--line);transition:border-color .2s,transform .25s}
 .card[hidden]{display:none}
-.tile{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden}
+a.card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.tile{aspect-ratio:16/10;overflow:hidden;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);background:#ebe8e0}
 .tile img{display:block}
-.tile.photo img{width:100%;height:100%;object-fit:cover}
-.tile .glyph{font-weight:800;font-size:68px;color:#fff;letter-spacing:-.04em}
-.tile .play{width:0;height:0;border-left:38px solid #fff;border-top:23px solid transparent;border-bottom:23px solid transparent;margin-left:10px}
-.body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
-.body h3{margin:0 0 8px;font-size:1.3rem;letter-spacing:-.02em}
-.body p{margin:0 0 14px;color:var(--muted);font-size:15.5px;line-height:1.55}
-.body .meta{color:var(--faint);font-size:14px;margin-top:auto;margin-bottom:12px}
-.body .more{color:var(--accent);font-weight:650;font-size:15px}
-
-
-.paper{border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden;box-shadow:0 30px 60px -40px rgba(16,17,20,.25)}
-.paper-top{padding:38px 40px 30px;background:radial-gradient(700px 260px at 85% -40px,#e9eefc,transparent 70%)}
-.paper .tag{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:750;font-size:.95rem;letter-spacing:.01em}
-.paper .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
-.paper h3{font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.1;letter-spacing:-.035em;margin:12px 0 12px;max-width:22em}
-.authors{color:var(--muted);margin:0 0 20px;font-size:1.02rem}.authors b{color:var(--fg);font-weight:650}
-.summary{max-width:44em;color:#2a2d34;margin:0 0 6px;font-size:1.06rem;line-height:1.65}
-.pstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
-.pstats div{padding:22px 40px;border-left:1px solid var(--line)}.pstats div:first-child{border-left:0}
-.pstats b{display:block;font-size:1.7rem;letter-spacing:-.03em;color:var(--accent);line-height:1.1}
-.pstats span{display:block;color:var(--faint);font-size:14px;margin-top:4px;line-height:1.4}
-.paper-bottom{padding:26px 40px 30px;border-top:1px solid var(--line);background:var(--soft)}
-.chips{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 22px}
-.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:14px;color:var(--muted)}
-details.abs summary{cursor:pointer;color:var(--accent);font-weight:700;list-style:none;display:inline-flex;align-items:center;gap:8px}
-details.abs summary::-webkit-details-marker{display:none}
-details.abs summary::after{content:"\2193";transition:transform .2s}
-details.abs[open] summary::after{transform:rotate(180deg)}
-details.abs p{color:var(--muted);font-size:15.5px;line-height:1.7;margin:16px 0 0;max-width:52em}
-.chip.is-text{border:0;background:transparent;padding:0;color:var(--faint)}
-.vex{display:flex;flex-direction:column;align-items:center;justify-content:center;width:150px;height:110px;border-radius:24px;background:#111;color:#fff;box-shadow:0 14px 28px -16px rgba(0,0,0,.45)}.vex b{font-size:50px;line-height:1;letter-spacing:-.04em;font-weight:800}.vex i{font-style:normal;font-size:15px;letter-spacing:.14em;font-weight:700;margin-top:6px;color:#ff8a96}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:10px}
-header.top{transition:box-shadow .2s}header.top.scrolled{box-shadow:0 10px 26px -20px rgba(16,17,20,.4)}
-nav a.on{color:var(--fg);box-shadow:inset 0 -2px 0 var(--accent)}
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.hero .portrait{animation:rise .7s ease both}.hero .wrap>div{animation:rise .7s .1s ease both}
+.tile.photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+a.card:hover .tile.photo img{transform:scale(1.035)}
+.body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.body .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.body h3{font-family:var(--serif);font-weight:400;font-size:1.85rem;line-height:1.08;letter-spacing:-.02em;margin:0 0 10px}
+.body p{margin:0 0 18px;color:var(--muted);font-size:15.5px;line-height:1.55}
+.body .more{margin-top:auto;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.body .more::after{content:" \2192";display:inline-block;transition:transform .2s}
+a.card:hover .more::after{transform:translateX(4px)}
+.body .more.plain::after{content:""}
+/* app-style logos */
+.logo{display:flex;align-items:center;justify-content:center;width:84px;height:84px;border-radius:20px;color:#fff;font-weight:700;box-shadow:0 10px 20px -14px rgba(0,0,0,.45)}
+.logo.li{background:#0a66c2;font-size:44px;letter-spacing:-.05em}
+.logo.md{background:#111;font-size:50px;font-family:var(--serif)}
+.logo.yt{width:116px;height:82px;border-radius:22px;background:#f00}
+.logo.yt::after{content:"";border-left:27px solid #fff;border-top:16px solid transparent;border-bottom:16px solid transparent;margin-left:7px}
+.logo.ss{background:#ff6719;font-size:50px}
 .logo.ig{background:linear-gradient(45deg,#fdb447,#f6733a 30%,#d62976 60%,#8a3ab9 85%,#4f5bd5);position:relative}
-.logo.ig::before{content:"";width:44px;height:44px;border:5px solid #fff;border-radius:14px;box-sizing:border-box}
-.logo.ig::after{content:"";position:absolute;width:12px;height:12px;border:4px solid #fff;border-radius:50%;box-sizing:border-box;top:17px;right:17px;width:0;height:0;border:0;background:#fff;box-shadow:none;width:7px;height:7px}
-.logo{display:flex;align-items:center;justify-content:center;width:92px;height:92px;border-radius:22px;color:#fff;font-weight:800;box-shadow:0 14px 28px -16px rgba(0,0,0,.4),0 0 0 1px rgba(0,0,0,.04)}
-.logo.li{background:#0a66c2;font-size:48px;letter-spacing:-.05em}
-.logo.md{background:#111;font-size:54px}
-.logo.yt{width:128px;height:90px;border-radius:24px;background:#f00}
-.logo.yt::after{content:"";width:0;height:0;border-left:30px solid #fff;border-top:18px solid transparent;border-bottom:18px solid transparent;margin-left:8px}
-.logo.ss{background:#ff6719;font-size:54px}
-.statement .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:start}
-.statement h2{margin:0}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}.duo img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);aspect-ratio:16/10;object-fit:cover}
-.statement p{color:var(--muted);margin:0 0 18px}.statement p a{color:var(--fg);font-weight:600;text-decoration-color:var(--accent);text-underline-offset:3px}
+.logo.ig::before{content:"";width:40px;height:40px;border:4.5px solid #fff;border-radius:12px}
+.logo.ig::after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:#fff;top:17px;right:17px}
+.vex{display:flex;flex-direction:column;align-items:center;justify-content:center;width:136px;height:100px;border-radius:20px;background:#111;color:#fff}
+.vex b{font-family:var(--serif);font-weight:400;font-size:54px;line-height:1}
+.vex i{font-style:normal;font-family:var(--mono);font-size:12px;letter-spacing:.16em;margin-top:6px;color:#ff8a96}
 
-.rows{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
-.row{display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:baseline;padding:22px 30px;border-top:1px solid var(--line);text-decoration:none;transition:background .15s}
-.row:first-child{border-top:0}a.row:hover{background:var(--soft)}
-.row .k{color:var(--accent);font-weight:750;font-size:1.05rem;display:flex;align-items:center;gap:10px}
-.row .k .ico{width:24px;height:24px;border-radius:6px;object-fit:contain}
-.row .t{font-weight:650;font-size:1.1rem;letter-spacing:-.01em;overflow-wrap:anywhere}
-.row .t small{display:block;color:var(--faint);font-weight:500;font-size:14px;margin-top:2px}
-.row .go{color:var(--faint)}
+/* statement */
+.statement .wrap{display:grid;grid-template-columns:150px 1fr;gap:20px}
+.statement blockquote{margin:0;font-family:var(--serif);font-size:clamp(2.2rem,5.2vw,4.2rem);line-height:1.04;letter-spacing:-.03em;max-width:15em}
+.statement blockquote em{font-style:italic;color:var(--accent)}
+.statement .by{margin:34px 0 0;color:var(--muted);max-width:34em}
+.statement .by a{text-decoration-color:var(--accent);text-underline-offset:3px;font-weight:500}
 
-.contact{text-align:center}
-.contact .bars{justify-content:center;margin-bottom:22px}
-.contact h2{margin-bottom:16px}
-.contact p{color:var(--muted);max-width:34em;margin:0 auto 28px}
-.contact .btns{justify-content:center}
-.note{display:inline-block;border:1px dashed #cfd3da;border-radius:14px;padding:14px 26px;color:var(--faint);font-size:15px;text-decoration:none;background:#fff}
+/* research */
+.paper{display:grid;grid-template-columns:150px 1fr;gap:20px}
+.paper .tag{color:var(--accent)}
+.paper h3{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.04;letter-spacing:-.025em;margin:0 0 18px;max-width:20em}
+.authors{color:var(--muted);margin:0 0 26px}.authors b{color:var(--ink);font-weight:600}
+.summary{font-size:1.14rem;line-height:1.7;max-width:40em;margin:0 0 34px}
+.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink);margin-bottom:30px}
+.results div{padding:18px 22px 6px 0}
+.results b{display:block;font-family:var(--serif);font-weight:400;font-size:2.7rem;line-height:1;letter-spacing:-.02em}
+.results span{display:block;color:var(--faint);font-size:14px;margin-top:8px;line-height:1.4}
+.topics{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--faint);line-height:2;margin:0 0 22px}
+.topics span::after{content:"  /  ";color:var(--line)}.topics span:last-child::after{content:""}
+details.abs summary{cursor:pointer;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;list-style:none;display:inline-flex;gap:10px;border-bottom:1px solid var(--ink);padding-bottom:3px}
+details.abs summary::-webkit-details-marker{display:none}
+details.abs summary::after{content:"+"}details.abs[open] summary::after{content:"\2212"}
+details.abs p{color:var(--muted);font-size:16px;line-height:1.75;margin:18px 0 0;max-width:46em}
 
-footer{border-top:1px solid var(--line);padding:30px 0}
-footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
-footer img{width:44px;height:44px;border-radius:50%;object-fit:cover;display:block;border:1px solid var(--line)}
-footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-weight:650;text-decoration:none}
+/* profiles */
+.rows{margin-left:170px;border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:170px 1fr auto;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .2s}
+a.row:hover{padding-left:10px}
+.row .k{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.row .k .ico{width:22px;height:22px;border-radius:5px;object-fit:contain}
+.row .t{font-weight:500;overflow-wrap:anywhere}.row .t small{display:block;color:var(--faint);font-weight:400;font-size:14px}
+.row .go{font-family:var(--mono);color:var(--faint);transition:color .15s,transform .2s}
+a.row:hover .go{color:var(--accent);transform:translate(3px,-3px)}
 
-.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}.js .reveal.in{opacity:1;transform:none}
+/* contact */
+.contact h2{font-size:clamp(3.4rem,9vw,7.4rem);margin:0 0 26px}
+.contact .body2{margin-left:170px}
+.contact p{color:var(--muted);max-width:30em;margin:0 0 34px;font-size:1.12rem}
 
-@media (max-width:900px){
+footer{border-top:1px solid var(--ink);padding:26px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;color:var(--faint)}
+footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}.js .reveal.in{opacity:1;transform:none}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero .portrait{animation:rise .8s ease both}.hero .wrap>div:last-child{animation:rise .8s .12s ease both}
+
+@media (max-width:1000px){
+  .hero .wrap{grid-template-columns:1fr;gap:44px}.portrait{max-width:380px}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .statement .wrap{grid-template-columns:1fr;gap:28px}
 }
-@media (max-width:420px){nav a{margin-left:12px;font-size:13.5px}.brand{font-size:15px}}
-@media (max-width:720px){
-  .paper-top{padding:26px 22px 22px}.paper-bottom{padding:22px}.pstats{grid-template-columns:1fr}.pstats div{border-left:0;border-top:1px solid var(--line);padding:18px 22px}.pstats div:first-child{border-top:0}
-  body{font-size:16px}.wrap{padding:0 18px}
-  nav a{margin-left:16px;font-size:14px}
-  .hero{padding:40px 0 52px}
-  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:30px}
-  .portrait{max-width:260px}
-  .stats{grid-template-columns:1fr}.stats div{border-left:0;border-top:1px solid var(--line)}.stats div:first-child{border-top:0}
-  section.block{padding:60px 0}
+@media (max-width:760px){
+  body{font-size:16px}.wrap{padding:0 20px}
+  nav{gap:16px}nav a{font-size:11.5px}nav a.on::before{display:none}
+  .brand{font-size:22px}
+  .hero{padding:36px 0 60px}
+  .now div{grid-template-columns:1fr;gap:2px}.now .r{display:none}
+  section.block{padding:64px 0}
+  .shead,.statement .wrap,.paper{grid-template-columns:1fr;gap:10px}.shead{margin-bottom:28px}
+  .tabs,.rows,.contact .body2{margin-left:0}
   .grid{grid-template-columns:minmax(0,1fr)}
-  .bars{gap:4px}.bars span{width:4px}
-  .row{grid-template-columns:1fr;gap:4px;padding:18px 20px}.row .go{display:none}
-  footer .wrap{flex-direction:column;align-items:flex-start}
+  .results{grid-template-columns:1fr}.results div{border-top:1px solid var(--line);padding:16px 0}.results div:first-child{border-top:0}
+  .row{grid-template-columns:1fr auto;gap:4px 12px}.row .t{grid-column:1;grid-row:2}.row .go{grid-row:1;grid-column:2}
+  footer .wrap{flex-direction:column}
 }
+@media (max-width:520px){nav a[href="#profiles"]{display:none}nav{gap:18px}.brand{font-size:21px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -296,113 +308,98 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Benjamin Wald</a>
-    <nav aria-label="Primary">
-      <a href="#work">Work</a><a href="#research">Research</a><a href="#profiles">Profiles</a><a href="#connect">Connect</a>
-    </nav>
+    <a class="brand" href="/">Benjamin Wald</a>
+    <nav aria-label="Primary"><a href="#work">Work</a><a href="#research">Research</a><a href="#profiles">Profiles</a><a href="#connect">Contact</a></nav>
   </div>
 </header>
 
 <main id="main">
 <section class="hero" id="top">
   <div class="wrap">
-    <figure class="portrait"><img src="/images/benjamin-wald.webp" width="640" height="640" alt="Benjamin Wald" fetchpriority="high"></figure>
+    <figure class="portrait">
+      <div class="frame"><img src="/images/benjamin-wald.webp" width="640" height="640" alt="Benjamin Wald" fetchpriority="high"></div>
+    </figure>
     <div>
-      <div class="bars" data-bars="36" aria-hidden="true"></div>
-      <h1 class="display">Benjamin<br>Wald</h1>
+      <h1>Benjamin <em>Wald</em></h1>
       <p class="lead">Founder &amp; CEO of OfficeSwap and Co-Founder of MirRehab.</p>
-      <p class="sub">His work focuses on technology, artificial intelligence, healthcare innovation, product development, and technology-driven marketplaces. He builds <b>OfficeSwap</b> and <b>MirRehab</b>, and is a three-time competitor at the <b>VEX IQ World Championships</b>, a member of team <b>7700J</b>.</p>
-      <div class="btns"><a class="btn primary" href="#work">See the work</a><a class="btn" href="#profiles">Profiles</a></div>
-      <div class="stats">
-        <div><b>20 languages</b><span>OfficeSwap, in the app</span></div>
-        <div><b>5 platforms</b><span>iPhone, iPad, Apple Watch, Android and web</span></div>
-        <div><b>30 days</b><span>free trial on every OfficeSwap plan</span></div>
-      </div>
+      <p class="sub">His work focuses on technology, artificial intelligence, healthcare innovation, product development, and technology-driven marketplaces.</p>
+      <div class="btns"><a class="btn primary" href="#work">Selected work &darr;</a><a class="btn" href="#profiles">Profiles</a></div>
+      <dl class="now">
+        <div><dt>Founder &amp; CEO</dt><dd><a href="https://officeswap.co">OfficeSwap</a></dd><span class="r">officeswap.co</span></div>
+        <div><dt>Co-Founder</dt><dd><a href="https://mirrehab.com">MirRehab</a></dd><span class="r">mirrehab.com</span></div>
+        <div><dt>Research</dt><dd><a href="#research">MIT URTC</a><small>paper on glioma</small></dd><span class="r">with A. Shrivastava</span></div>
+        <div><dt>Robotics</dt><dd>VEX IQ World Championships<small>3&times; &middot; team 7700J</small></dd><span class="r"></span></div>
+      </dl>
     </div>
   </div>
 </section>
 
 <section class="block" id="work">
   <div class="wrap">
-    <h2 class="display">What I'm building</h2>
-    <div class="pills" role="group" aria-label="Filter">
-      <button class="pill" data-f="all" aria-pressed="true">All</button>
-      <button class="pill" data-f="company" aria-pressed="false">Companies</button>
-      <button class="pill" data-f="research" aria-pressed="false">Research</button>
-      <button class="pill" data-f="robotics" aria-pressed="false">Robotics</button>
-      <button class="pill" data-f="profile" aria-pressed="false">Profiles &amp; writing</button>
+    <div class="shead"><span class="idx">01</span><h2>What I'm <em>building</em></h2></div>
+    <div class="tabs" role="group" aria-label="Filter">
+      <button class="tab" data-f="all" aria-pressed="true">All</button>
+      <button class="tab" data-f="company" aria-pressed="false">Companies</button>
+      <button class="tab" data-f="research" aria-pressed="false">Research</button>
+      <button class="tab" data-f="robotics" aria-pressed="false">Robotics</button>
+      <button class="tab" data-f="profile" aria-pressed="false">Profiles</button>
     </div>
     <div class="grid">
       <a class="card reveal" data-k="company" href="https://officeswap.co">
         <div class="tile photo" style="background:#f4f6f8"><img src="/images/work/officeswap.webp" width="1000" height="625" alt="OfficeSwap: every office, in use" loading="lazy"></div>
-        <div class="body"><h3>OfficeSwap</h3><p>A marketplace for flexible office space that helps companies and professionals make better use of underutilized workspaces.</p><div class="meta">Founder &amp; CEO · officeswap.co</div><span class="more">Visit OfficeSwap →</span></div>
+        <div class="body"><div class="k">Company &middot; Founder &amp; CEO</div><h3>OfficeSwap</h3><p>A marketplace for flexible office space that helps companies and professionals make better use of underutilized workspaces.</p><span class="more">officeswap.co</span></div>
       </a>
       <a class="card reveal" data-k="company" href="https://mirrehab.com">
         <div class="tile photo" style="background:#ecf0f1"><img src="/images/work/mirrehab.webp" width="1000" height="625" alt="The MirRehab headset" loading="lazy"></div>
-        <div class="body"><h3>MirRehab</h3><p>A technology-enabled neurorehabilitation platform designed to make rehabilitation more accessible, engaging, and effective.</p><div class="meta">Co-Founder · mirrehab.com</div><span class="more">Visit MirRehab →</span></div>
+        <div class="body"><div class="k">Company &middot; Co-Founder</div><h3>MirRehab</h3><p>A technology-enabled neurorehabilitation platform designed to make rehabilitation more accessible, engaging, and effective.</p><span class="more">mirrehab.com</span></div>
       </a>
       <a class="card reveal" data-k="research" href="#research">
         <div class="tile photo" style="background:#0e1630"><img src="/images/work/paper.webp" width="1200" height="750" alt="Transcriptomic Signatures of Surgical Eloquence in the Human Cortex, MIT URTC" loading="lazy"></div>
-        <div class="body"><h3>Transcriptomic Signatures of Surgical Eloquence in the Human Cortex</h3><p>Does the brain tissue surgeons must protect carry a molecular signature? A spatial-null-corrected study of the Allen Human Brain Atlas.</p><div class="meta">Research · MIT URTC · with Aditya Shrivastava</div><span class="more">Read more →</span></div>
+        <div class="body"><div class="k">Research &middot; MIT URTC</div><h3>Transcriptomic Signatures of Surgical Eloquence in the Human Cortex</h3><p>Does the brain tissue surgeons must protect carry a molecular signature? A spatial-null-corrected study of the Allen Human Brain Atlas.</p><span class="more">Read more</span></div>
       </a>
       <div class="card reveal" data-k="robotics">
-        <div class="tile" style="background:#f4f6f8"><span class="vex" aria-hidden="true"><b>3&times;</b><i>VEX IQ</i></span></div>
-        <div class="body"><h3>VEX IQ World Championships</h3><p>Three-time competitor at the VEX IQ World Championships. Member of team 7700J.</p><div class="meta">Robotics · VEX IQ · Team 7700J</div></div>
+        <div class="tile"><span class="vex" aria-hidden="true"><b>3&times;</b><i>VEX IQ</i></span></div>
+        <div class="body"><div class="k">Robotics &middot; Team 7700J</div><h3>VEX IQ World Championships</h3><p>Three-time competitor at the VEX IQ World Championships. Member of team 7700J.</p></div>
       </div>
       <a class="card reveal" data-k="profile" href="https://www.linkedin.com/in/benjaminwaldprofile">
-        <div class="tile" style="background:#f4f6f8"><span class="logo li" aria-hidden="true">in</span></div>
-        <div class="body"><h3>LinkedIn</h3><p>Benjamin Wald on LinkedIn.</p><div class="meta">linkedin.com/in/benjaminwaldprofile</div><span class="more">Open profile →</span></div>
+        <div class="tile"><span class="logo li" aria-hidden="true">in</span></div>
+        <div class="body"><div class="k">Profile</div><h3>LinkedIn</h3><p>Benjamin Wald on LinkedIn.</p><span class="more">Open profile</span></div>
       </a>
       <a class="card reveal" data-k="profile" href="https://www.instagram.com/benjaminwaldd/">
-        <div class="tile" style="background:#f4f6f8"><span class="logo ig" aria-hidden="true"></span></div>
-        <div class="body"><h3>Instagram</h3><p>Benjamin Wald on Instagram.</p><div class="meta">instagram.com/benjaminwaldd</div><span class="more">Open Instagram →</span></div>
+        <div class="tile"><span class="logo ig" aria-hidden="true"></span></div>
+        <div class="body"><div class="k">Profile</div><h3>Instagram</h3><p>Benjamin Wald on Instagram.</p><span class="more">@benjaminwaldd</span></div>
       </a>
       <a class="card reveal" data-k="profile" href="https://medium.com/@benjaminwald">
-        <div class="tile" style="background:#f4f6f8"><span class="logo md" aria-hidden="true">M</span></div>
-        <div class="body"><h3>Medium</h3><p>Writing on Medium.</p><div class="meta">medium.com/@benjaminwald</div><span class="more">Read on Medium →</span></div>
+        <div class="tile"><span class="logo md" aria-hidden="true">M</span></div>
+        <div class="body"><div class="k">Writing</div><h3>Medium</h3><p>Writing on Medium.</p><span class="more">Read on Medium</span></div>
       </a>
       <a class="card reveal" data-k="profile" href="https://www.youtube.com/@benjaminwaldprofile">
-        <div class="tile" style="background:#f4f6f8"><span class="logo yt" aria-hidden="true"></span></div>
-        <div class="body"><h3>YouTube</h3><p>Benjamin Wald on YouTube.</p><div class="meta">youtube.com/@benjaminwaldprofile</div><span class="more">Watch on YouTube →</span></div>
+        <div class="tile"><span class="logo yt" aria-hidden="true"></span></div>
+        <div class="body"><div class="k">Profile</div><h3>YouTube</h3><p>Benjamin Wald on YouTube.</p><span class="more">Watch on YouTube</span></div>
       </a>
       <a class="card reveal" data-k="profile" href="https://substack.com/@benjaminwaldprofile">
-        <div class="tile" style="background:#f4f6f8"><span class="logo ss" aria-hidden="true">S</span></div>
-        <div class="body"><h3>Substack</h3><p>Writing on Substack.</p><div class="meta">substack.com/@benjaminwaldprofile</div><span class="more">Read on Substack →</span></div>
+        <div class="tile"><span class="logo ss" aria-hidden="true">S</span></div>
+        <div class="body"><div class="k">Writing</div><h3>Substack</h3><p>Writing on Substack.</p><span class="more">Read on Substack</span></div>
       </a>
-    </div>
-  </div>
-</section>
-
-<section class="block soft statement">
-  <div class="wrap">
-    <h2 class="display reveal">Building across technology, AI, healthcare and marketplaces.</h2>
-    <div class="reveal">
-      <p>Benjamin Wald is the Founder &amp; CEO of OfficeSwap and Co-Founder of MirRehab.</p>
-      <p>Read the founder profiles on <a href="https://officeswap.co/benjamin-wald/">officeswap.co</a> and <a href="https://mirrehab.com/team/benjamin-wald">mirrehab.com</a>.</p>
-      <div class="duo"><img src="/images/work/officeswap.webp" width="1000" height="625" alt="OfficeSwap" loading="lazy"><img src="/images/work/mirrehab.webp" width="1000" height="625" alt="MirRehab headset" loading="lazy"></div>
     </div>
   </div>
 </section>
 
 <section class="block" id="research">
   <div class="wrap">
-    <h2 class="display">Research</h2>
+    <div class="shead"><span class="idx">02</span><h2>Research</h2></div>
     <article class="paper reveal">
-      <div class="paper-top">
-        <span class="tag">MIT URTC</span>
+      <span class="tag mono">MIT URTC</span>
+      <div>
         <h3>Transcriptomic Signatures of Surgical Eloquence in the Human Cortex</h3>
         <p class="authors"><b>Benjamin J. Wald</b> &middot; Aditya Shrivastava, University of California, Berkeley</p>
         <p class="summary">Surgeons must avoid cutting &ldquo;eloquent&rdquo; cortex, the regions that control movement, sensation, sight, hearing and language, yet it is defined by function, not by molecules. This paper asks whether eloquent cortex has a molecular signature in baseline gene expression, and whether that signature survives once the smooth way expression varies across the cortex is accounted for. A classifier trained on Allen Human Brain Atlas data separated eloquent from silent cortex in held-out brains. The result held against a spatial spin test and under an independent labeling, and the top genes pointed to a fast-firing, parvalbumin-interneuron-rich program in eloquent cortex.</p>
-      </div>
-      <div class="pstats">
-        <div><b>AUC 0.998</b><span>logistic regression, leave-one-donor-out (&plusmn; 0.004)</span></div>
-        <div><b>p = 0.013</b><span>spatial spin test, 1,000 simulations</span></div>
-        <div><b>6 brains</b><span>15,633 genes, Allen Human Brain Atlas</span></div>
-      </div>
-      <div class="paper-bottom">
-        <div class="chips" aria-label="Topics">
-          <span class="chip">Computational neuroscience</span><span class="chip">Allen Human Brain Atlas</span><span class="chip">Gene expression</span><span class="chip">Surgical eloquence</span><span class="chip">Spin test</span><span class="chip">Machine learning</span><span class="chip">Glioma surgery</span><span class="chip">Parvalbumin interneurons</span>
+        <div class="results">
+          <div><b>AUC 0.998</b><span>logistic regression, leave-one-donor-out (&plusmn; 0.004)</span></div>
+          <div><b>p = 0.013</b><span>spatial spin test, 1,000 simulations</span></div>
+          <div><b>6 brains</b><span>15,633 genes, Allen Human Brain Atlas</span></div>
         </div>
+        <p class="topics"><span>Computational neuroscience</span><span>Allen Human Brain Atlas</span><span>Gene expression</span><span>Surgical eloquence</span><span>Spin test</span><span>Machine learning</span><span>Glioma surgery</span><span>Parvalbumin interneurons</span></p>
         <details class="abs">
           <summary>Read the abstract</summary>
           <p>Neurosurgically eloquent cortex, which a surgeon must preserve to avoid inducing an enduring functional deficit, is defined by function rather than molecular composition. This study investigates whether a unique baseline transcriptomic signature exists for these regions and whether such a signature persists after accounting for significant spatial autocorrelation in gene expression across the cortex. Leave-one-donor-out classifiers were trained on microarray data from six human brains (15,633 genes) from the Allen Human Brain Atlas, aggregated to the Desikan-Killiany parcellation. The results reveal a significant ability of molecular signals to discriminate eloquent cortex from silent cortex (AUC 0.998 &plusmn; 0.004 for logistic regression, under a biologically curated labeling). A spatial spin test of this effect, following the Alexander-Bloch methodology, reached statistical significance under 1000 simulations (p=0.013). Under an independently generated, Yeo 2011 seven-network-based labeling of the cortex, the ability to discriminate continued (AUC 0.926, p=0.007 under a more stringent null), reaching significance at p&lt;0.01 under 1000 iterations.</p>
@@ -413,75 +410,66 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
   </div>
 </section>
 
-<section class="block" id="profiles">
+<section class="block statement">
   <div class="wrap">
-    <h2 class="display">Profiles &amp; writing</h2>
-    <div class="rows reveal">
-      <a class="row" href="https://www.linkedin.com/in/benjaminwaldprofile"><span class="k">LinkedIn</span><span class="t">linkedin.com/in/benjaminwaldprofile</span><span class="go">↗</span></a>
-      <a class="row" href="https://www.instagram.com/benjaminwaldd/"><span class="k">Instagram</span><span class="t">instagram.com/benjaminwaldd</span><span class="go">↗</span></a>
-      <a class="row" href="https://medium.com/@benjaminwald"><span class="k">Medium</span><span class="t">medium.com/@benjaminwald</span><span class="go">↗</span></a>
-      <a class="row" href="https://www.youtube.com/@benjaminwaldprofile"><span class="k">YouTube</span><span class="t">youtube.com/@benjaminwaldprofile</span><span class="go">↗</span></a>
-      <a class="row" href="https://substack.com/@benjaminwaldprofile"><span class="k">Substack</span><span class="t">substack.com/@benjaminwaldprofile</span><span class="go">↗</span></a>
-      <a class="row" href="https://officeswap.co/benjamin-wald/"><span class="k"><img class="ico" src="/images/logos/officeswap.png" width="24" height="24" alt="">OfficeSwap</span><span class="t">Founder profile<small>officeswap.co/benjamin-wald</small></span><span class="go">↗</span></a>
-      <a class="row" href="https://mirrehab.com/team/benjamin-wald"><span class="k"><img class="ico" src="/images/logos/mirrehab.png" width="26" height="26" alt="">MirRehab</span><span class="t">Founder profile<small>mirrehab.com/team/benjamin-wald</small></span><span class="go">↗</span></a>
+    <span class="idx mono" style="color:var(--accent)">03</span>
+    <div class="reveal">
+      <blockquote>Building across technology, <em>AI,</em> healthcare and marketplaces.</blockquote>
+      <p class="by">Benjamin Wald is the Founder &amp; CEO of OfficeSwap and Co-Founder of MirRehab. Read the founder profiles on <a href="https://officeswap.co/benjamin-wald/">officeswap.co</a> and <a href="https://mirrehab.com/team/benjamin-wald">mirrehab.com</a>.</p>
     </div>
   </div>
 </section>
 
-<section class="block soft contact" id="connect">
+<section class="block" id="profiles">
   <div class="wrap">
-    <div class="bars" data-bars="28" aria-hidden="true"></div>
-    <h2 class="display">Get in touch</h2>
-    <p>Find me on LinkedIn, or take a look at what I'm building at OfficeSwap and MirRehab.</p>
-    <div class="btns"><a class="btn primary" href="https://www.linkedin.com/in/benjaminwaldprofile">LinkedIn</a><a class="btn" href="https://www.instagram.com/benjaminwaldd/">Instagram</a><a class="btn" href="https://officeswap.co">OfficeSwap</a><a class="btn" href="https://mirrehab.com">MirRehab</a></div>
-    <a class="note" href="https://officeswap.co/benjamin-wald/">More about me on officeswap.co/benjamin-wald</a>
+    <div class="shead"><span class="idx">04</span><h2>Profiles &amp; <em>writing</em></h2></div>
+    <div class="rows reveal">
+      <a class="row" href="https://www.linkedin.com/in/benjaminwaldprofile"><span class="k">LinkedIn</span><span class="t">linkedin.com/in/benjaminwaldprofile</span><span class="go">&nearr;</span></a>
+      <a class="row" href="https://www.instagram.com/benjaminwaldd/"><span class="k">Instagram</span><span class="t">instagram.com/benjaminwaldd</span><span class="go">&nearr;</span></a>
+      <a class="row" href="https://medium.com/@benjaminwald"><span class="k">Medium</span><span class="t">medium.com/@benjaminwald</span><span class="go">&nearr;</span></a>
+      <a class="row" href="https://www.youtube.com/@benjaminwaldprofile"><span class="k">YouTube</span><span class="t">youtube.com/@benjaminwaldprofile</span><span class="go">&nearr;</span></a>
+      <a class="row" href="https://substack.com/@benjaminwaldprofile"><span class="k">Substack</span><span class="t">substack.com/@benjaminwaldprofile</span><span class="go">&nearr;</span></a>
+      <a class="row" href="https://officeswap.co/benjamin-wald/"><span class="k"><img class="ico" src="/images/logos/officeswap.png" width="22" height="22" alt="">OfficeSwap</span><span class="t">Founder profile<small>officeswap.co/benjamin-wald</small></span><span class="go">&nearr;</span></a>
+      <a class="row" href="https://mirrehab.com/team/benjamin-wald"><span class="k"><img class="ico" src="/images/logos/mirrehab.png" width="22" height="22" alt="">MirRehab</span><span class="t">Founder profile<small>mirrehab.com/team/benjamin-wald</small></span><span class="go">&nearr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="block contact" id="connect">
+  <div class="wrap">
+    <div class="shead"><span class="idx">05</span><span></span></div>
+    <h2 style="margin-left:170px">Get in <em>touch</em></h2>
+    <div class="body2">
+      <p>Find me on LinkedIn or Instagram, or take a look at what I'm building at OfficeSwap and MirRehab.</p>
+      <div class="btns" style="margin-bottom:0"><a class="btn primary" href="https://www.linkedin.com/in/benjaminwaldprofile">LinkedIn</a><a class="btn" href="https://www.instagram.com/benjaminwaldd/">Instagram</a><a class="btn" href="https://officeswap.co">OfficeSwap</a><a class="btn" href="https://mirrehab.com">MirRehab</a></div>
+    </div>
   </div>
 </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <img src="/images/benjamin-wald-360.webp" width="44" height="44" alt="" loading="lazy">
-    <span>&copy; 2026 Benjamin Wald &middot; <a href="#top">Back to top</a></span>
-  </div>
+  <div class="wrap mono"><span>&copy; 2026 Benjamin Wald</span><a href="#top">Back to top &uarr;</a></div>
 </footer>
 
 <script>
 (function () {
-  // the little animated bars (like a growing skyline)
-  document.querySelectorAll('[data-bars]').forEach(function (el) {
-    var n = +el.getAttribute('data-bars'), frag = document.createDocumentFragment();
-    for (var i = 0; i < n; i++) {
-      var s = document.createElement('span'), t = i / (n - 1);
-      var h = 6 + Math.round(26 * Math.pow(Math.sin(t * Math.PI), 1.2) * (0.55 + 0.45 * Math.abs(Math.sin(i * 1.7))));
-      s.style.setProperty('--h', h + 'px'); s.style.setProperty('--o', (0.25 + 0.75 * Math.sin(t * Math.PI)).toFixed(2)); s.style.setProperty('--d', (i * 0.07).toFixed(2) + 's');
-      frag.appendChild(s);
-    }
-    el.appendChild(frag);
-  });
-  // filter the cards
-  var pills = document.querySelectorAll('.pill'), cards = document.querySelectorAll('.card');
-  pills.forEach(function (p) {
-    p.addEventListener('click', function () {
-      var f = p.getAttribute('data-f');
-      pills.forEach(function (q) { q.setAttribute('aria-pressed', q === p ? 'true' : 'false'); });
+  var hdr = document.querySelector('header.top');
+  addEventListener('scroll', function () { hdr.classList.toggle('scrolled', scrollY > 8); }, { passive: true });
+  var tabs = document.querySelectorAll('.tab'), cards = document.querySelectorAll('.card');
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      var f = t.getAttribute('data-f');
+      tabs.forEach(function (q) { q.setAttribute('aria-pressed', q === t ? 'true' : 'false'); });
       cards.forEach(function (c) { c.hidden = !(f === 'all' || c.getAttribute('data-k') === f); });
     });
   });
-  // header shadow once scrolled, and mark the nav link of the section in view
-  var hdr = document.querySelector('header.top');
-  addEventListener('scroll', function () { hdr.classList.toggle('scrolled', scrollY > 8); }, { passive: true });
   var links = {}; document.querySelectorAll('nav a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
   if ('IntersectionObserver' in window) {
-    var spy = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { Object.keys(links).forEach(function (k) { links[k].classList.toggle('on', k === e.target.id); }); } }); }, { rootMargin: '-45% 0px -50% 0px' });
+    var spy = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) Object.keys(links).forEach(function (k) { links[k].classList.toggle('on', k === e.target.id); }); }); }, { rootMargin: '-45% 0px -50% 0px' });
     Object.keys(links).forEach(function (k) { var el = document.getElementById(k); if (el) spy.observe(el); });
-  }
-  // fade things in as they scroll into view
-  var els = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
-    els.forEach(function (e) { io.observe(e); });
-  } else els.forEach(function (e) { e.classList.add('in'); });
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(function (e) { io.observe(e); });
+  } else document.querySelectorAll('.reveal').forEach(function (e) { e.classList.add('in'); });
 })();
 </script>
 </body>
