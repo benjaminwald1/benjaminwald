@@ -222,6 +222,12 @@ details.abs summary::after{content:"\2193";transition:transform .2s}
 details.abs[open] summary::after{transform:rotate(180deg)}
 details.abs p{color:var(--muted);font-size:15.5px;line-height:1.7;margin:16px 0 0;max-width:52em}
 .chip.is-text{border:0;background:transparent;padding:0;color:var(--faint)}
+.logo{display:flex;align-items:center;justify-content:center;width:92px;height:92px;border-radius:22px;color:#fff;font-weight:800;box-shadow:0 14px 28px -16px rgba(0,0,0,.4),0 0 0 1px rgba(0,0,0,.04)}
+.logo.li{background:#0a66c2;font-size:48px;letter-spacing:-.05em}
+.logo.md{background:#111;font-size:54px}
+.logo.yt{width:128px;height:90px;border-radius:24px;background:#f00}
+.logo.yt::after{content:"";width:0;height:0;border-left:30px solid #fff;border-top:18px solid transparent;border-bottom:18px solid transparent;margin-left:8px}
+.logo.ss{background:#ff6719;font-size:54px}
 .statement .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:start}
 .statement h2{margin:0}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}.duo img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);aspect-ratio:16/10;object-fit:cover}
@@ -326,19 +332,19 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
         <div class="body"><h3>Transcriptomic Signatures of Surgical Eloquence in the Human Cortex</h3><p>Does the brain tissue surgeons must protect carry a molecular signature? A spatial-null-corrected study of the Allen Human Brain Atlas.</p><div class="meta">Research · MIT URTC · with Aditya Shrivastava</div><span class="more">Read more →</span></div>
       </a>
       <a class="card reveal" data-k="profile" href="https://www.linkedin.com/in/benjaminwaldprofile">
-        <div class="tile" style="background:#0a66c2"><span class="glyph">in</span></div>
+        <div class="tile" style="background:#f4f6f8"><span class="logo li" aria-hidden="true">in</span></div>
         <div class="body"><h3>LinkedIn</h3><p>Benjamin Wald on LinkedIn.</p><div class="meta">linkedin.com/in/benjaminwaldprofile</div><span class="more">Open profile →</span></div>
       </a>
       <a class="card reveal" data-k="profile" href="https://medium.com/@benjaminwald">
-        <div class="tile" style="background:#111"><span class="glyph">M</span></div>
+        <div class="tile" style="background:#f4f6f8"><span class="logo md" aria-hidden="true">M</span></div>
         <div class="body"><h3>Medium</h3><p>Writing on Medium.</p><div class="meta">medium.com/@benjaminwald</div><span class="more">Read on Medium →</span></div>
       </a>
       <a class="card reveal" data-k="profile" href="https://www.youtube.com/@benjaminwaldprofile">
-        <div class="tile" style="background:#ff2d2d"><span class="play"></span></div>
+        <div class="tile" style="background:#f4f6f8"><span class="logo yt" aria-hidden="true"></span></div>
         <div class="body"><h3>YouTube</h3><p>Benjamin Wald on YouTube.</p><div class="meta">youtube.com/@benjaminwaldprofile</div><span class="more">Watch on YouTube →</span></div>
       </a>
       <a class="card reveal" data-k="profile" href="https://substack.com/@benjaminwaldprofile">
-        <div class="tile" style="background:#ff6719"><span class="glyph">S</span></div>
+        <div class="tile" style="background:#f4f6f8"><span class="logo ss" aria-hidden="true">S</span></div>
         <div class="body"><h3>Substack</h3><p>Writing on Substack.</p><div class="meta">substack.com/@benjaminwaldprofile</div><span class="more">Read on Substack →</span></div>
       </a>
     </div>
