@@ -197,7 +197,7 @@ h2.display{font-size:clamp(2.2rem,5vw,3.6rem);margin:0 0 32px}
 
 .rows{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
 .row{display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:baseline;padding:22px 30px;border-top:1px solid var(--line);text-decoration:none;transition:background .15s}
-.row:first-child{border-top:0}.row:hover{background:var(--soft)}
+.row:first-child{border-top:0}a.row:hover{background:var(--soft)}
 .row .k{color:var(--accent);font-weight:750;font-size:1.05rem}
 .row .t{font-weight:650;font-size:1.1rem;letter-spacing:-.01em;overflow-wrap:anywhere}
 .row .t small{display:block;color:var(--faint);font-weight:500;font-size:14px;margin-top:2px}
@@ -245,7 +245,7 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
   <div class="wrap">
     <a class="brand" href="/"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Benjamin Wald</a>
     <nav aria-label="Primary">
-      <a href="#work">Work</a><a href="#profiles">Profiles</a><a href="#connect">Connect</a>
+      <a href="#work">Work</a><a href="#research">Research</a><a href="#profiles">Profiles</a><a href="#connect">Connect</a>
     </nav>
   </div>
 </header>
@@ -275,6 +275,7 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
     <div class="pills" role="group" aria-label="Filter">
       <button class="pill" data-f="all" aria-pressed="true">All</button>
       <button class="pill" data-f="company" aria-pressed="false">Companies</button>
+      <button class="pill" data-f="research" aria-pressed="false">Research</button>
       <button class="pill" data-f="profile" aria-pressed="false">Profiles &amp; writing</button>
     </div>
     <div class="grid">
@@ -286,6 +287,10 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
         <div class="tile" style="background:linear-gradient(135deg,#e6f4f4,#d3ecec)"><img src="/images/logos/mirrehab.png" width="104" height="104" alt=""></div>
         <div class="body"><h3>MirRehab</h3><p>A technology-enabled neurorehabilitation platform designed to make rehabilitation more accessible, engaging, and effective.</p><div class="meta">Co-Founder · mirrehab.com</div><span class="more">Visit MirRehab →</span></div>
       </a>
+      <div class="card reveal" data-k="research">
+        <div class="tile" style="background:linear-gradient(135deg,#1b2a4a,#0e1730)"><span class="glyph" style="font-size:54px">MIT URTC</span></div>
+        <div class="body"><h3>Research on glioma</h3><p>A paper on glioma, for the MIT Undergraduate Research Technology Conference.</p><div class="meta">Research · MIT URTC</div></div>
+      </div>
       <a class="card reveal" data-k="profile" href="https://www.linkedin.com/in/benjaminwaldprofile">
         <div class="tile" style="background:#0a66c2"><span class="glyph">in</span></div>
         <div class="body"><h3>LinkedIn</h3><p>Benjamin Wald on LinkedIn.</p><div class="meta">linkedin.com/in/benjaminwaldprofile</div><span class="more">Open profile →</span></div>
@@ -312,6 +317,15 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
     <div class="reveal">
       <p>Benjamin Wald is the Founder &amp; CEO of OfficeSwap and Co-Founder of MirRehab.</p>
       <p>Read the founder profiles on <a href="https://officeswap.co/benjamin-wald/">officeswap.co</a> and <a href="https://mirrehab.com/team/benjamin-wald">mirrehab.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="research">
+  <div class="wrap">
+    <h2 class="display">Research</h2>
+    <div class="rows reveal">
+      <div class="row"><span class="k">MIT URTC</span><span class="t">A paper on glioma<small>MIT Undergraduate Research Technology Conference</small></span><span class="go"></span></div>
     </div>
   </div>
 </section>
