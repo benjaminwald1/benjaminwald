@@ -11,6 +11,7 @@
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 
+<link rel="preload" as="image" href="/images/benjamin-wald.webp" fetchpriority="high">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -109,6 +110,7 @@
       ],
       "sameAs": [
         "https://www.linkedin.com/in/benjaminwaldprofile",
+        "https://www.instagram.com/benjaminwaldd/",
         "https://medium.com/@benjaminwald",
         "https://www.youtube.com/@benjaminwaldprofile",
         "https://substack.com/@benjaminwaldprofile",
@@ -142,7 +144,7 @@
 </script>
 
 <style>
-:root{--bg:#fff;--soft:#f6f7f9;--fg:#101114;--muted:#5f6673;--faint:#8a919e;--line:#e6e8ec;--accent:#d92b40;--accent-soft:#fdecee;--r:20px}
+:root{--bg:#fff;--soft:#f6f7f9;--fg:#101114;--muted:#5f6673;--faint:#6b7280;--line:#e6e8ec;--accent:#d92b40;--accent-soft:#fdecee;--r:20px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 html,body{overflow-x:hidden}
@@ -224,6 +226,14 @@ details.abs[open] summary::after{transform:rotate(180deg)}
 details.abs p{color:var(--muted);font-size:15.5px;line-height:1.7;margin:16px 0 0;max-width:52em}
 .chip.is-text{border:0;background:transparent;padding:0;color:var(--faint)}
 .vex{display:flex;flex-direction:column;align-items:center;justify-content:center;width:150px;height:110px;border-radius:24px;background:#111;color:#fff;box-shadow:0 14px 28px -16px rgba(0,0,0,.45)}.vex b{font-size:50px;line-height:1;letter-spacing:-.04em;font-weight:800}.vex i{font-style:normal;font-size:15px;letter-spacing:.14em;font-weight:700;margin-top:6px;color:#ff8a96}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:10px}
+header.top{transition:box-shadow .2s}header.top.scrolled{box-shadow:0 10px 26px -20px rgba(16,17,20,.4)}
+nav a.on{color:var(--fg);box-shadow:inset 0 -2px 0 var(--accent)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero .portrait{animation:rise .7s ease both}.hero .wrap>div{animation:rise .7s .1s ease both}
+.logo.ig{background:linear-gradient(45deg,#fdb447,#f6733a 30%,#d62976 60%,#8a3ab9 85%,#4f5bd5);position:relative}
+.logo.ig::before{content:"";width:44px;height:44px;border:5px solid #fff;border-radius:14px;box-sizing:border-box}
+.logo.ig::after{content:"";position:absolute;width:12px;height:12px;border:4px solid #fff;border-radius:50%;box-sizing:border-box;top:17px;right:17px;width:0;height:0;border:0;background:#fff;box-shadow:none;width:7px;height:7px}
 .logo{display:flex;align-items:center;justify-content:center;width:92px;height:92px;border-radius:22px;color:#fff;font-weight:800;box-shadow:0 14px 28px -16px rgba(0,0,0,.4),0 0 0 1px rgba(0,0,0,.04)}
 .logo.li{background:#0a66c2;font-size:48px;letter-spacing:-.05em}
 .logo.md{background:#111;font-size:54px}
@@ -262,6 +272,7 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .statement .wrap{grid-template-columns:1fr;gap:28px}
 }
+@media (max-width:420px){nav a{margin-left:12px;font-size:13.5px}.brand{font-size:15px}}
 @media (max-width:720px){
   .paper-top{padding:26px 22px 22px}.paper-bottom{padding:22px}.pstats{grid-template-columns:1fr}.pstats div{border-left:0;border-top:1px solid var(--line);padding:18px 22px}.pstats div:first-child{border-top:0}
   body{font-size:16px}.wrap{padding:0 18px}
@@ -342,6 +353,10 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
         <div class="tile" style="background:#f4f6f8"><span class="logo li" aria-hidden="true">in</span></div>
         <div class="body"><h3>LinkedIn</h3><p>Benjamin Wald on LinkedIn.</p><div class="meta">linkedin.com/in/benjaminwaldprofile</div><span class="more">Open profile →</span></div>
       </a>
+      <a class="card reveal" data-k="profile" href="https://www.instagram.com/benjaminwaldd/">
+        <div class="tile" style="background:#f4f6f8"><span class="logo ig" aria-hidden="true"></span></div>
+        <div class="body"><h3>Instagram</h3><p>Benjamin Wald on Instagram.</p><div class="meta">instagram.com/benjaminwaldd</div><span class="more">Open Instagram →</span></div>
+      </a>
       <a class="card reveal" data-k="profile" href="https://medium.com/@benjaminwald">
         <div class="tile" style="background:#f4f6f8"><span class="logo md" aria-hidden="true">M</span></div>
         <div class="body"><h3>Medium</h3><p>Writing on Medium.</p><div class="meta">medium.com/@benjaminwald</div><span class="more">Read on Medium →</span></div>
@@ -403,6 +418,7 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
     <h2 class="display">Profiles &amp; writing</h2>
     <div class="rows reveal">
       <a class="row" href="https://www.linkedin.com/in/benjaminwaldprofile"><span class="k">LinkedIn</span><span class="t">linkedin.com/in/benjaminwaldprofile</span><span class="go">↗</span></a>
+      <a class="row" href="https://www.instagram.com/benjaminwaldd/"><span class="k">Instagram</span><span class="t">instagram.com/benjaminwaldd</span><span class="go">↗</span></a>
       <a class="row" href="https://medium.com/@benjaminwald"><span class="k">Medium</span><span class="t">medium.com/@benjaminwald</span><span class="go">↗</span></a>
       <a class="row" href="https://www.youtube.com/@benjaminwaldprofile"><span class="k">YouTube</span><span class="t">youtube.com/@benjaminwaldprofile</span><span class="go">↗</span></a>
       <a class="row" href="https://substack.com/@benjaminwaldprofile"><span class="k">Substack</span><span class="t">substack.com/@benjaminwaldprofile</span><span class="go">↗</span></a>
@@ -417,7 +433,7 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
     <div class="bars" data-bars="28" aria-hidden="true"></div>
     <h2 class="display">Get in touch</h2>
     <p>Find me on LinkedIn, or take a look at what I'm building at OfficeSwap and MirRehab.</p>
-    <div class="btns"><a class="btn primary" href="https://www.linkedin.com/in/benjaminwaldprofile">LinkedIn</a><a class="btn" href="https://officeswap.co">OfficeSwap</a><a class="btn" href="https://mirrehab.com">MirRehab</a></div>
+    <div class="btns"><a class="btn primary" href="https://www.linkedin.com/in/benjaminwaldprofile">LinkedIn</a><a class="btn" href="https://www.instagram.com/benjaminwaldd/">Instagram</a><a class="btn" href="https://officeswap.co">OfficeSwap</a><a class="btn" href="https://mirrehab.com">MirRehab</a></div>
     <a class="note" href="https://officeswap.co/benjamin-wald/">More about me on officeswap.co/benjamin-wald</a>
   </div>
 </section>
@@ -452,6 +468,14 @@ footer span{color:var(--muted);font-size:14.5px}footer a{color:var(--fg);font-we
       cards.forEach(function (c) { c.hidden = !(f === 'all' || c.getAttribute('data-k') === f); });
     });
   });
+  // header shadow once scrolled, and mark the nav link of the section in view
+  var hdr = document.querySelector('header.top');
+  addEventListener('scroll', function () { hdr.classList.toggle('scrolled', scrollY > 8); }, { passive: true });
+  var links = {}; document.querySelectorAll('nav a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { Object.keys(links).forEach(function (k) { links[k].classList.toggle('on', k === e.target.id); }); } }); }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(links).forEach(function (k) { var el = document.getElementById(k); if (el) spy.observe(el); });
+  }
   // fade things in as they scroll into view
   var els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
