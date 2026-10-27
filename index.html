@@ -282,6 +282,7 @@ details.abs p{color:var(--muted);font-size:16px;line-height:1.8;margin:18px 0 0;
 .rows{margin-left:170px}
 .row{display:grid;grid-template-columns:170px 1fr auto;gap:20px;align-items:center;padding:20px 22px;margin:0 -22px;border-radius:18px;text-decoration:none;transition:background .35s,transform .45s var(--ease)}
 .row + .row{box-shadow:0 -1px 0 var(--line)}
+div.row{border-radius:0}
 a.row:hover{background:var(--card);transform:translateX(8px);box-shadow:var(--shadow)}
 a.row:hover + .row{box-shadow:none}
 .row .k{font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:10px}
@@ -351,8 +352,8 @@ footer a{text-decoration:none;transition:color .3s}footer a:hover{color:var(--ac
       <dl class="now stagger">
         <div><dt>Founder &amp; CEO</dt><dd><a href="https://officeswap.co">OfficeSwap</a></dd><span class="r">officeswap.co</span></div>
         <div><dt>Co-Founder</dt><dd><a href="https://mirrehab.com">MirRehab</a></dd><span class="r">mirrehab.com</span></div>
-        <div><dt>Research</dt><dd><a href="#research">MIT URTC</a><small>paper on glioma</small></dd><span class="r">with A. Shrivastava</span></div>
-        <div><dt>Robotics</dt><dd>VEX IQ World Championships<small>3&times; &middot; team 7700J</small></dd><span class="r"></span></div>
+        <div><dt>Research</dt><dd><a href="#research">MIT URTC</a><small>2026 &middot; paper on glioma</small></dd><span class="r">with A. Shrivastava</span></div>
+        <div><dt>Robotics</dt><dd>VEX IQ World Championships<small>2021, 2022, 2023 &middot; team 7700J</small></dd><span class="r"></span></div>
       </dl>
     </div>
   </div>
@@ -379,11 +380,11 @@ footer a{text-decoration:none;transition:color .3s}footer a:hover{color:var(--ac
       </a>
       <a class="card reveal" data-k="research" href="#research">
         <div class="tile photo" style="background:#0e1630"><img src="/images/work/paper-v2.webp" width="1200" height="750" alt="Transcriptomic Signatures of Surgical Eloquence in the Human Cortex, MIT URTC" loading="lazy"></div>
-        <div class="body"><div class="k">Research &middot; MIT URTC</div><h3>Transcriptomic Signatures of Surgical Eloquence in the Human Cortex</h3><p>Does the brain tissue surgeons must protect carry a molecular signature? A spatial-null-corrected study of the Allen Human Brain Atlas.</p><span class="more">Read more</span></div>
+        <div class="body"><div class="k">Research &middot; MIT URTC 2026</div><h3>Transcriptomic Signatures of Surgical Eloquence in the Human Cortex</h3><p>Does the brain tissue surgeons must protect carry a molecular signature? A spatial-null-corrected study of the Allen Human Brain Atlas.</p><span class="more">Read more</span></div>
       </a>
       <div class="card reveal" data-k="robotics">
         <div class="tile"><span class="vex" aria-hidden="true"><b>3&times;</b><i>VEX IQ</i></span></div>
-        <div class="body"><div class="k">Robotics &middot; Team 7700J</div><h3>VEX IQ World Championships</h3><p>Three-time competitor at the VEX IQ World Championships. Member of team 7700J.</p></div>
+        <div class="body"><div class="k">Robotics &middot; 2021 &ndash; 2023</div><h3>VEX IQ World Championships</h3><p>Competed at the VEX IQ World Championships three years running: 2021, 2022 and 2023. Member of team 7700J.</p></div>
       </div>
       <a class="card reveal" data-k="profile" href="https://www.linkedin.com/in/benjaminwaldprofile">
         <div class="tile"><span class="logo li" aria-hidden="true">in</span></div>
@@ -405,7 +406,7 @@ footer a{text-decoration:none;transition:color .3s}footer a:hover{color:var(--ac
   <div class="wrap">
     <div class="shead"><span class="idx">02</span><h2>Research</h2></div>
     <article class="paper reveal">
-      <span class="tag mono">MIT URTC</span>
+      <span class="tag mono">MIT URTC &middot; 2026</span>
       <div>
         <h3>Transcriptomic Signatures of Surgical Eloquence in the Human Cortex</h3>
         <p class="authors"><b>Benjamin Wald</b> &middot; Aditya Shrivastava, University of California, Berkeley</p>
@@ -426,9 +427,21 @@ footer a{text-decoration:none;transition:color .3s}footer a:hover{color:var(--ac
   </div>
 </section>
 
+<section class="block" id="recognition">
+  <div class="wrap">
+    <div class="shead"><span class="idx">03</span><h2>Recogni<em>tion</em></h2></div>
+    <div class="rows reveal">
+      <div class="row"><span class="k">2023</span><span class="t">VEX IQ World Championships<small>Competitor, team 7700J</small></span><span class="go"></span></div>
+      <div class="row"><span class="k">2022</span><span class="t">VEX IQ World Championships<small>Competitor, team 7700J</small></span><span class="go"></span></div>
+      <div class="row"><span class="k">2021</span><span class="t">VEX IQ World Championships<small>Competitor, team 7700J</small></span><span class="go"></span></div>
+      <div class="row"><span class="k">2026</span><span class="t">Research paper on surgical eloquence in the human cortex<small>MIT Undergraduate Research Technology Conference, with Aditya Shrivastava</small></span><span class="go"></span></div>
+    </div>
+  </div>
+</section>
+
 <section class="block statement">
   <div class="wrap">
-    <span class="idx mono" style="color:var(--accent)">03</span>
+    <span class="idx mono" style="color:var(--accent)">04</span>
     <div class="reveal">
       <blockquote>Building across technology, <em>AI,</em> healthcare and marketplaces.</blockquote>
       <p class="by">Benjamin Wald is the Founder &amp; CEO of OfficeSwap and Co-Founder of MirRehab. Read the founder profiles on <a href="https://officeswap.co/benjamin-wald/">officeswap.co</a> and <a href="https://mirrehab.com/team/benjamin-wald">mirrehab.com</a>.</p>
@@ -438,7 +451,7 @@ footer a{text-decoration:none;transition:color .3s}footer a:hover{color:var(--ac
 
 <section class="block" id="profiles">
   <div class="wrap">
-    <div class="shead"><span class="idx">04</span><h2>Profiles &amp; <em>writing</em></h2></div>
+    <div class="shead"><span class="idx">05</span><h2>Profiles &amp; <em>writing</em></h2></div>
     <div class="rows stagger">
       <a class="row" href="https://www.linkedin.com/in/benjaminwaldprofile"><span class="k">LinkedIn</span><span class="t">linkedin.com/in/benjaminwaldprofile</span><span class="go">&nearr;</span></a>
       <a class="row" href="https://medium.com/@benjaminwald"><span class="k">Medium</span><span class="t">medium.com/@benjaminwald</span><span class="go">&nearr;</span></a>
@@ -451,7 +464,7 @@ footer a{text-decoration:none;transition:color .3s}footer a:hover{color:var(--ac
 
 <section class="block contact" id="connect">
   <div class="wrap">
-    <div class="shead"><span class="idx">05</span><span></span></div>
+    <div class="shead"><span class="idx">06</span><span></span></div>
     <h2 style="margin-left:170px">Get in <em>touch</em></h2>
     <div class="body2">
       <p>Find me on LinkedIn, or take a look at what I'm building at OfficeSwap and MirRehab.</p>
