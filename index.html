@@ -173,12 +173,14 @@ header nav a:hover::after,header nav a.on::after{transform:scaleX(1)}
 .ticker{margin-left:auto;font-size:13px;white-space:nowrap;min-width:0}
 .cta{display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 18px;background:var(--tan);color:#15130f;font:500 13px/1 var(--mono);text-transform:uppercase;white-space:nowrap;transition:transform .35s var(--ease),background .3s,box-shadow .35s}
 .cta:hover{transform:translateY(-2px);background:#e7cdb0;box-shadow:0 10px 22px -12px rgba(220,187,152,.7)}
+.cta:active{transform:scale(.97)}
+.ghost:active{transform:scale(.97)}
 .cta .arr{display:inline-block;transition:transform .35s var(--ease)}.cta:hover .arr{transform:translateX(5px)}
 .ghost{display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 20px;border:1px solid currentColor;border-radius:999px;font:500 13px/1 var(--mono);text-transform:uppercase;white-space:nowrap;transition:background .3s,color .3s,border-color .3s}
 .ghost:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 
 /* hero */
-.hero{position:relative;height:230vh;background:var(--bg)}
+.hero{position:relative;height:190vh;background:var(--bg)}
 .hero .pin{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
 h1.name{margin:0;display:flex;align-items:center;justify-content:center;font:400 clamp(3rem,13.5vw,12.5rem)/1 var(--mono);color:#6b6e6a;letter-spacing:0;white-space:nowrap;will-change:transform,opacity}
 h1.name .ch{display:inline-block;opacity:0;transform:translateY(.4em);animation:chin .9s var(--ease) both;animation-delay:calc(var(--i) * 70ms + 200ms);transition:color .35s}
@@ -195,7 +197,7 @@ h1.name .ch:hover{color:var(--fg)}
 /* light sections */
 .light-sec{background:var(--light);color:var(--ink)}
 .wrap{padding:0 32px;max-width:1500px;margin:0 auto}
-.mission{height:260vh}
+.mission{height:210vh}
 .mission .pin{position:sticky;top:0;height:100vh;padding:150px 32px 60px}
 .mission .label{margin-bottom:34px}
 .mission p{margin:0;font:400 clamp(1.7rem,4.6vw,4.4rem)/1.18 var(--mono);max-width:19em;letter-spacing:-.01em}
@@ -204,7 +206,7 @@ h1.name .ch:hover{color:var(--fg)}
 .mission .c.on.last::after{content:"";position:absolute;left:100%;top:.06em;width:.58em;height:.9em;background:currentColor;animation:blink 1s steps(1) infinite}
 
 /* portrait over pixel noise */
-.noise{position:relative;height:260vh;background:var(--bg)}
+.noise{position:relative;height:210vh;background:var(--bg)}
 .noise canvas{position:absolute;inset:0;width:100%;height:100%}
 .noise .pin{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
 .pframe{width:min(360px,70vw);aspect-ratio:4/5;overflow:hidden;clip-path:inset(var(--cy,50%) var(--cx,50%) var(--cy,50%) var(--cx,50%));background:#000;will-change:clip-path}
@@ -239,6 +241,8 @@ h1.name .ch:hover{color:var(--fg)}
 .wcard h3{margin:0 0 20px;font:500 14px/1.55 var(--mono)}
 .wcard .ghost{align-self:flex-start;height:36px;padding:0 16px;font-size:12px}
 .wcard:hover .ghost{background:var(--fg);color:var(--bg)}
+.wcard:active{transform:scale(.99)}
+.rail{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
 .work .more{display:flex;justify-content:center;margin-top:40px}
 
 /* research */
@@ -269,7 +273,7 @@ details.abs p{font-size:14px;line-height:1.85;margin:18px 0 0;max-width:56em;tex
 .timeline .label{padding:0 32px}
 .track{display:flex;gap:24px;padding:0 32px;width:max-content;will-change:transform}
 .tcard{flex:none;width:min(1000px,84vw);min-height:540px;background:var(--card);padding:40px 44px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:40px;transition:background .4s}
-.tcard:hover{background:#333535}
+.tcard{will-change:auto}.tcard:hover{background:#333535}
 .tl{display:flex;flex-direction:column;justify-content:space-between;gap:30px}
 .tr{display:flex;flex-direction:column;justify-content:space-between;gap:30px;min-width:0}
 .tcard .age{display:flex;align-items:center;gap:10px;color:var(--tan);font-size:14px}
@@ -319,7 +323,7 @@ footer a:hover{color:var(--tan)}
 .fade.in{opacity:1;transform:none}
 
 @media (max-width:900px){
-  header.top{padding:0 16px;gap:12px;height:58px}header nav,.ticker{display:none}.cta{margin-left:auto;height:36px;padding:0 14px}
+  header.top{padding:0 16px;gap:12px;height:58px}header nav,.ticker{display:none}.cta{margin-left:auto;height:44px;padding:0 16px}.ghost{height:44px}.arrows button{width:52px;height:44px}
   .wrap,.mission .pin,.sofar .label,.work .top,.timeline .label,.profiles .label{padding-left:18px;padding-right:18px}
   .mission .pin{padding-top:110px}
   .stat{padding:22px 18px}.rail{padding:0 18px 10px}.track{padding:0 18px}
@@ -330,6 +334,7 @@ footer a:hover{color:var(--tan)}
   .contact{padding:100px 18px 80px}footer{padding:22px 18px 34px;flex-direction:column}
 }
 @media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .fade,.wcard,h1.name .ch,.social{opacity:1!important;transform:none!important}
   .hero,.mission,.noise{height:auto}.hero .pin,.mission .pin,.noise .pin{position:static;min-height:100vh}
@@ -486,7 +491,8 @@ footer a:hover{color:var(--tan)}
   function typeMission(p) {
     var n = Math.round(clamp(p / 0.78) * mc.length);
     if (n - 1 === lastOn) return;
-    for (var i = 0; i < mc.length; i++) { mc[i].classList.toggle('on', i < n); mc[i].classList.toggle('last', i === n - 1); }
+    var from = Math.max(0, Math.min(n, lastOn + 1) - 1), to = Math.min(mc.length, Math.max(n, lastOn + 1) + 1);
+    for (var i = from; i < to; i++) { mc[i].classList.toggle('on', i < n); mc[i].classList.toggle('last', i === n - 1); }
     lastOn = n - 1;
   }
 
@@ -506,9 +512,9 @@ footer a:hover{color:var(--tan)}
   function frameNoise() {
     if (!vis) return;
     ctx.clearRect(0, 0, cv.width, cv.height);
-    for (var k = 0; k < 5; k++) cells.push({ x: Math.floor(Math.random() * cv.width / cs) * cs, y: Math.floor(Math.random() * cv.height / cs) * cs, w: (1 + Math.floor(Math.random() * 3)) * cs, a: 0, d: 1, m: .05 + Math.random() * .16 });
+    for (var k = 0; k < 4; k++) cells.push({ x: Math.floor(Math.random() * cv.width / cs) * cs, y: Math.floor(Math.random() * cv.height / cs) * cs, w: (1 + Math.floor(Math.random() * 3)) * cs, a: 0, d: 1, m: .05 + Math.random() * .16 });
     cells = cells.filter(function (c) { c.a += c.d * .02; if (c.a >= c.m) c.d = -1; if (c.a <= 0 && c.d < 0) return false; ctx.fillStyle = 'rgba(255,255,255,' + c.a + ')'; ctx.fillRect(c.x, c.y, c.w - 2, cs - 2); return true; });
-    if (cells.length > 900) cells.splice(0, cells.length - 900);
+    if (cells.length > 500) cells.splice(0, cells.length - 500);
     requestAnimationFrame(frameNoise);
   }
   if (!reduce && 'IntersectionObserver' in window) new IntersectionObserver(function (es) { var v = es[0].isIntersecting; if (v && !vis) { vis = true; requestAnimationFrame(frameNoise); } vis = v; }).observe(sec);
@@ -526,27 +532,32 @@ footer a:hover{color:var(--tan)}
   var hero = document.getElementById('top'), mission = document.getElementById('mission'), gap = document.querySelector('.gap'), nameEl = document.querySelector('h1.name'), pf = document.querySelector('.pframe');
   var hdr = document.querySelector('header.top'), bar = document.querySelector('.progress'), themed = $('[data-theme]'), navA = $('header nav a'), ticking = false;
   var secProg = function (el) { var r = el.getBoundingClientRect(); return clamp(-r.top / Math.max(1, r.height - innerHeight)); };
-  function onScroll() {
-    ticking = false;
-    var max = document.documentElement.scrollHeight - innerHeight;
-    bar.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
-
-    var hp = secProg(hero);
+  var T = { h: 0, m: 0, p: 0, t: 0 }, C = { h: 0, m: 0, p: 0, t: 0 }, raf = 0, ease = reduce ? 1 : .13, sofarEl = document.getElementById('sofar');
+  function render() {
+    raf = 0; var moving = false;
+    for (var k in T) { var d = T[k] - C[k]; if (Math.abs(d) < .0003) C[k] = T[k]; else { C[k] += d * ease; moving = true; } }
+    var hp = C.h;
     gap.style.setProperty('--g', lerp(.45, 1.15, clamp(hp / .55)).toFixed(3));
     gap.style.setProperty('--gi', clamp((hp - .04) / .2).toFixed(3));
     nameEl.style.transform = 'scale(' + lerp(1, 1.06, hp).toFixed(3) + ')';
     nameEl.style.opacity = (1 - clamp((hp - .75) / .25)).toFixed(3);
-
-    typeMission(secProg(mission));
-
-    var pp = secProg(sec), o = clamp(pp / .4);
-    pf.style.setProperty('--cx', (lerp(50, 0, o)).toFixed(2) + '%'); pf.style.setProperty('--cy', (lerp(50, 0, o)).toFixed(2) + '%');
+    typeMission(C.m);
+    var o = clamp(C.p / .4);
+    pf.style.setProperty('--cx', lerp(50, 0, o).toFixed(2) + '%'); pf.style.setProperty('--cy', lerp(50, 0, o).toFixed(2) + '%');
     pf.style.setProperty('--ps', lerp(1.35, 1, o).toFixed(3));
-    typeCap(pp);
+    typeCap(C.p);
+    if (pinTl) track.style.transform = 'translate3d(' + (-C.t * (track.scrollWidth - innerWidth)).toFixed(1) + 'px,0,0)';
+    if (moving) raf = requestAnimationFrame(render);
+  }
+  function onScroll(snap) {
+    ticking = false;
+    var max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
+    T.h = secProg(hero); T.m = secProg(mission); T.p = secProg(sec); T.t = pinTl ? secProg(tl) : 0;
+    if (snap === true) { for (var k in T) C[k] = T[k]; render(); } else if (!raf) raf = requestAnimationFrame(render);
 
-    stats.forEach(function (s) { var r = s.getBoundingClientRect(), d = Math.abs(r.top + r.height / 2 - innerHeight / 2) / (innerHeight * .42); s.style.setProperty('--o', lerp(1, .2, clamp(d)).toFixed(3)); });
-
-    if (pinTl) { var tp = secProg(tl); track.style.transform = 'translate3d(' + (-tp * (track.scrollWidth - innerWidth)).toFixed(1) + 'px,0,0)'; }
+    var sr = sofarEl.getBoundingClientRect();
+    if (sr.bottom > -200 && sr.top < innerHeight + 200) stats.forEach(function (s) { var r = s.getBoundingClientRect(), d = Math.abs(r.top + r.height / 2 - innerHeight / 2) / (innerHeight * .42); s.style.setProperty('--o', lerp(1, .2, clamp(d)).toFixed(3)); });
 
     if (pinTl) { var best = null, bd = 1e9; jc.forEach(function (c) { var r = c.getBoundingClientRect(), d = Math.abs(r.left + r.width / 2 - innerWidth * .42); if (d < bd) { bd = d; best = c; } }); jc.forEach(function (c) { c.classList.toggle('on', c === best); }); }
 
@@ -555,9 +566,9 @@ footer a:hover{color:var(--tan)}
     navA.forEach(function (a) { var t = document.querySelector(a.getAttribute('href')); if (!t) return; var r = t.getBoundingClientRect(); a.classList.toggle('on', r.top <= innerHeight * .4 && r.bottom > innerHeight * .4); });
   }
   addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
-  addEventListener('resize', function () { sizeCv(); sizeTl(); onScroll(); });
-  onScroll();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { sizeTl(); onScroll(); });
+  addEventListener('resize', function () { sizeCv(); sizeTl(); onScroll(true); });
+  onScroll(true);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { sizeTl(); onScroll(true); });
 
   // ---- fade-ins, card rail, counters
   function countUp(el) {
