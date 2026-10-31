@@ -186,8 +186,8 @@ h1.name{margin:0;display:flex;align-items:center;justify-content:center;font:400
 h1.name .ch{display:inline-block;opacity:0;transform:translateY(.4em);animation:chin .9s var(--ease) both;animation-delay:calc(var(--i) * 70ms + 200ms);transition:color .35s}
 h1.name .ch:hover{color:var(--fg)}
 @keyframes chin{to{opacity:1;transform:none}}
-.gap{display:inline-block;width:calc(var(--g,.45) * 1em);height:.9em;margin:0 .04em;overflow:hidden;position:relative;flex:none}
-.gap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:grayscale(1) contrast(1.1);opacity:var(--gi,0)}
+.gap{display:inline-block;width:calc(var(--g,.5) * 1em);height:.9em;margin:0 .06em;position:relative;flex:none}
+.gap img{position:absolute;left:0;top:50%;width:100%;height:1.12em;object-fit:cover;object-position:45% 22%;filter:grayscale(1) contrast(1.1);clip-path:inset(var(--gc,50%) 0);transform:translateY(-50%) scale(var(--gs,1.4));will-change:clip-path,transform}
 .social{position:absolute;bottom:9vh;display:flex;gap:18px;opacity:0;animation:chin 1s var(--ease) 1.3s both}
 .social a{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);font:600 13px/1 var(--sans);color:var(--dim);transition:color .3s,border-color .3s,transform .4s var(--ease)}
 .social a:hover{color:var(--fg);border-color:var(--fg);transform:translateY(-3px)}
@@ -537,10 +537,9 @@ footer a:hover{color:var(--tan)}
     raf = 0; var moving = false;
     for (var k in T) { var d = T[k] - C[k]; if (Math.abs(d) < .0003) C[k] = T[k]; else { C[k] += d * ease; moving = true; } }
     var hp = C.h;
-    gap.style.setProperty('--g', lerp(.45, 1.15, clamp(hp / .55)).toFixed(3));
-    gap.style.setProperty('--gi', clamp((hp - .04) / .2).toFixed(3));
-    nameEl.style.transform = 'scale(' + lerp(1, 1.06, hp).toFixed(3) + ')';
-    nameEl.style.opacity = (1 - clamp((hp - .75) / .25)).toFixed(3);
+    gap.style.setProperty('--g', lerp(.5, .56, clamp(hp / .2)).toFixed(3));
+    gap.style.setProperty('--gc', lerp(50, 0, clamp((hp - .02) / .25)).toFixed(2) + '%');
+    gap.style.setProperty('--gs', lerp(1.4, 1, clamp(hp / .5)).toFixed(3));
     typeMission(C.m);
     var o = clamp(C.p / .4);
     pf.style.setProperty('--cx', lerp(50, 0, o).toFixed(2) + '%'); pf.style.setProperty('--cy', lerp(50, 0, o).toFixed(2) + '%');
