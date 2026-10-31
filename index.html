@@ -268,13 +268,30 @@ details.abs p{font-size:14px;line-height:1.85;margin:18px 0 0;max-width:56em;tex
 .timeline .pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:34px}
 .timeline .label{padding:0 32px}
 .track{display:flex;gap:24px;padding:0 32px;width:max-content;will-change:transform}
-.tcard{width:min(700px,84vw);min-height:360px;background:var(--card);padding:34px 40px;display:flex;flex-direction:column;justify-content:space-between;transition:background .4s}
-.tcard:hover{background:#363837}
-.tcard .age{display:flex;align-items:center;gap:8px;color:var(--tan);font-size:13px}
-.tcard .age::before{content:"";width:9px;height:17px;background:var(--tan)}
-.tcard h3{margin:14px 0 0;font:500 clamp(1.5rem,2.6vw,2.4rem)/1.12 var(--mono);letter-spacing:-.01em;max-width:13em}
-.tcard p{margin:30px 0 0;font-size:13.5px;line-height:1.75;max-width:30em;text-transform:none;color:#cfd0cd}
-.tcard.end{justify-content:flex-end;background:transparent;border:1px solid var(--line);align-items:flex-start;gap:24px}
+.tcard{flex:none;width:min(1000px,84vw);min-height:540px;background:var(--card);padding:40px 44px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:40px;transition:background .4s}
+.tcard:hover{background:#333535}
+.tl{display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.tr{display:flex;flex-direction:column;justify-content:space-between;gap:30px;min-width:0}
+.tcard .age{display:flex;align-items:center;gap:10px;color:var(--tan);font-size:14px}
+.tcard .age::before{content:"";width:9px;height:19px;background:var(--tan)}
+.tcard h3{margin:16px 0 0;font:700 clamp(1.8rem,3.2vw,3rem)/1.1 var(--mono);letter-spacing:-.01em}
+.yr{width:min(260px,100%);aspect-ratio:4/5;border:1px solid var(--line);display:grid;place-items:center;font:300 4.4rem/1 var(--mono);color:#4a4c4b;letter-spacing:-.04em;transition:color .8s .3s,border-color .8s .3s}
+.tcard.on .yr{color:var(--fg);border-color:rgba(232,233,231,.4)}
+.tree{position:relative;width:100%;max-width:380px;aspect-ratio:380/262;align-self:flex-end;margin-top:6px}
+.tree svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.tree path{fill:none;stroke:#8a8c89;stroke-width:1.6;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .8s var(--ease)}
+.tree path.arrow{stroke:#fff;transition-delay:1.2s}
+.tcard.on .tree path{stroke-dashoffset:0}
+.pill{position:absolute;left:26.3%;width:60.5%;height:19.85%;display:grid;place-items:center;border:1.5px solid #8a8c89;border-radius:999px;font-size:13px;color:var(--fg);opacity:0;transform:translateX(-10px);transition:opacity .6s .35s,transform .7s .35s var(--ease),background .5s .9s,color .5s .9s,border-color .5s .9s}
+.pill.a{top:0}.pill.b{top:57.25%}
+.tcard.on .pill{opacity:1;transform:none}
+.tcard.on .pill.b{background:#fff;color:#111;border-color:#fff}
+.dots{position:absolute;left:56.6%;top:77.1%;width:4px;height:0;margin-left:-2px;background:radial-gradient(circle,#fff 1.2px,transparent 1.7px) 0 0/4px 8px repeat-y;transition:height .8s 1.4s var(--ease)}
+.dots::after{content:"";position:absolute;left:-2px;bottom:-4px;width:8px;height:8px;border-radius:50%;background:#fff;opacity:0;transition:opacity .3s 2.1s}
+.tcard.on .dots{height:21.3%}.tcard.on .dots::after{opacity:1}
+.tcard p{margin:0;font-size:14.5px;line-height:1.8;max-width:26em;text-transform:none;color:#d6d7d4;opacity:.35;transform:translateY(10px);transition:opacity .8s .5s,transform .8s .5s var(--ease)}
+.tcard.on p{opacity:1;transform:none}
+.tcard.end{display:flex;flex-direction:column;justify-content:flex-end;background:transparent;border:1px solid var(--line);align-items:flex-start;gap:24px;width:min(600px,84vw)}
 .tcard.end h3{margin:0}
 
 /* profiles + contact */
@@ -309,7 +326,7 @@ footer a:hover{color:var(--tan)}
   .results{grid-template-columns:1fr}
   .prow{grid-template-columns:1fr auto;padding:20px 18px}.prow .t{grid-column:1;grid-row:2}.prow .go{grid-row:1;grid-column:2}.prow:hover{padding-left:18px}
   .timeline .pin{position:static;height:auto;padding:90px 0 40px}
-  .track{width:auto;overflow-x:auto;scroll-snap-type:x mandatory;transform:none!important}.tcard{flex:0 0 84vw;scroll-snap-align:start}
+  .track{width:auto;overflow-x:auto;scroll-snap-type:x mandatory;transform:none!important}.tcard{flex:0 0 86vw;scroll-snap-align:start;grid-template-columns:1fr;padding:26px 22px;min-height:0;row-gap:26px}.yr{display:none}.tcard.end{display:flex}
   .contact{padding:100px 18px 80px}footer{padding:22px 18px 34px;flex-direction:column}
 }
 @media (prefers-reduced-motion:reduce){
@@ -402,10 +419,10 @@ footer a:hover{color:var(--tan)}
   <div class="pin">
     <div class="label">Recognition</div>
     <div class="track" id="track">
-      <article class="tcard"><div><div class="age">2021</div><h3>VEX IQ World Championships</h3></div><p>Competitor, team 7700J.</p></article>
-      <article class="tcard"><div><div class="age">2022</div><h3>VEX IQ World Championships</h3></div><p>Competitor, team 7700J.</p></article>
-      <article class="tcard"><div><div class="age">2023</div><h3>VEX IQ World Championships</h3></div><p>Competitor, team 7700J.</p></article>
-      <article class="tcard"><div><div class="age">2026</div><h3>Admitted to the Undergraduate MIT URTC program</h3></div><p>For my research paper on surgical eloquence in the human cortex, with Aditya Shrivastava. MIT Undergraduate Research Technology Conference.</p></article>
+      <article class="tcard"><div class="tl"><div><div class="age">2021</div><h3>Watch or compete?</h3></div><div class="yr" aria-hidden="true">2021</div></div><div class="tr"><div class="tree" aria-hidden="true"><svg viewBox="0 0 380 262" preserveAspectRatio="none"><path pathLength="1" d="M0 101H56M56 26V176"/><path pathLength="1" d="M56 26H100"/><path pathLength="1" d="M56 176H100"/><path class="arrow" pathLength="1" d="M330 176H376M366 167L376 176L366 185"/></svg><span class="pill a">Watch</span><span class="pill b">Compete</span><i class="dots"></i></div><p>VEX IQ World Championships. Competitor, team 7700J.</p></div></article>
+      <article class="tcard"><div class="tl"><div><div class="age">2022</div><h3>Once or again?</h3></div><div class="yr" aria-hidden="true">2022</div></div><div class="tr"><div class="tree" aria-hidden="true"><svg viewBox="0 0 380 262" preserveAspectRatio="none"><path pathLength="1" d="M0 101H56M56 26V176"/><path pathLength="1" d="M56 26H100"/><path pathLength="1" d="M56 176H100"/><path class="arrow" pathLength="1" d="M330 176H376M366 167L376 176L366 185"/></svg><span class="pill a">Once</span><span class="pill b">Again</span><i class="dots"></i></div><p>VEX IQ World Championships. Competitor, team 7700J.</p></div></article>
+      <article class="tcard"><div class="tl"><div><div class="age">2023</div><h3>Stop or keep going?</h3></div><div class="yr" aria-hidden="true">2023</div></div><div class="tr"><div class="tree" aria-hidden="true"><svg viewBox="0 0 380 262" preserveAspectRatio="none"><path pathLength="1" d="M0 101H56M56 26V176"/><path pathLength="1" d="M56 26H100"/><path pathLength="1" d="M56 176H100"/><path class="arrow" pathLength="1" d="M330 176H376M366 167L376 176L366 185"/></svg><span class="pill a">Stop</span><span class="pill b">Keep going</span><i class="dots"></i></div><p>VEX IQ World Championships. Competitor, team 7700J. Three years in a row.</p></div></article>
+      <article class="tcard"><div class="tl"><div><div class="age">2026</div><h3>Code or cortex?</h3></div><div class="yr" aria-hidden="true">2026</div></div><div class="tr"><div class="tree" aria-hidden="true"><svg viewBox="0 0 380 262" preserveAspectRatio="none"><path pathLength="1" d="M0 101H56M56 26V176"/><path pathLength="1" d="M56 26H100"/><path pathLength="1" d="M56 176H100"/><path class="arrow" pathLength="1" d="M330 176H376M366 167L376 176L366 185"/></svg><span class="pill a">Code</span><span class="pill b">Cortex</span><i class="dots"></i></div><p>Admitted to the Undergraduate MIT URTC program for my research paper on surgical eloquence in the human cortex, with Aditya Shrivastava. MIT Undergraduate Research Technology Conference.</p></div></article>
       <article class="tcard end"><h3>Want to see more?</h3><a class="cta" href="#profiles">See profiles <span class="arr">&rarr;</span></a></article>
     </div>
   </div>
@@ -501,7 +518,8 @@ footer a:hover{color:var(--tan)}
 
   // ---- pinned horizontal timeline (desktop only)
   var tl = document.getElementById('timeline'), track = document.getElementById('track'), pinTl = matchMedia('(min-width:901px)').matches && !reduce;
-  function sizeTl() { pinTl = matchMedia('(min-width:901px)').matches && !reduce; tl.style.height = pinTl ? (track.scrollWidth - innerWidth + innerHeight + 80) + 'px' : ''; if (!pinTl) track.style.transform = ''; }
+  var jc = $('.tcard:not(.end)');
+  function sizeTl() { if (!(matchMedia('(min-width:901px)').matches && !reduce)) jc.forEach(function (c) { c.classList.add('on'); }); pinTl = matchMedia('(min-width:901px)').matches && !reduce; tl.style.height = pinTl ? (track.scrollWidth - innerWidth + innerHeight + 80) + 'px' : ''; if (!pinTl) track.style.transform = ''; }
   sizeTl();
 
   // ---- scroll loop
@@ -529,6 +547,8 @@ footer a:hover{color:var(--tan)}
     stats.forEach(function (s) { var r = s.getBoundingClientRect(), d = Math.abs(r.top + r.height / 2 - innerHeight / 2) / (innerHeight * .42); s.style.setProperty('--o', lerp(1, .2, clamp(d)).toFixed(3)); });
 
     if (pinTl) { var tp = secProg(tl); track.style.transform = 'translate3d(' + (-tp * (track.scrollWidth - innerWidth)).toFixed(1) + 'px,0,0)'; }
+
+    if (pinTl) { var best = null, bd = 1e9; jc.forEach(function (c) { var r = c.getBoundingClientRect(), d = Math.abs(r.left + r.width / 2 - innerWidth * .42); if (d < bd) { bd = d; best = c; } }); jc.forEach(function (c) { c.classList.toggle('on', c === best); }); }
 
     var y = 32, cur = null; themed.forEach(function (s) { var r = s.getBoundingClientRect(); if (r.top <= y && r.bottom > y) cur = s; });
     hdr.classList.toggle('light', !!cur && cur.getAttribute('data-theme') === 'light');
