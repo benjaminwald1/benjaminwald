@@ -221,7 +221,9 @@ h1.name .ch:hover{color:var(--fg)}
 .sofar{background:var(--bg);padding:140px 0 160px;position:relative}
 .sofar .label{padding:0 32px;margin-bottom:60px}
 .sofar{counter-reset:n}
-.stat{counter-increment:n;position:relative;border-top:1px solid var(--line);padding:30px 32px;font-size:clamp(1.8rem,4.6vw,4.6rem);line-height:1.15;letter-spacing:-.01em;color:#fff;opacity:var(--o,.3);transition:opacity .15s linear}
+.stat{counter-increment:n;position:relative;display:grid;grid-template-columns:minmax(150px,300px) 1fr;gap:12px 32px;align-items:baseline;border-top:1px solid var(--line);padding:30px 32px;color:#fff;opacity:var(--o,.3);transition:opacity .15s linear}
+.stat .s1{font-size:.8125rem;letter-spacing:.08em;color:var(--tan)}
+.stat .s2{font-size:clamp(1.5rem,3.2vw,3rem);line-height:1.15;letter-spacing:-.025em;padding-right:48px}
 .stat:last-child{border-bottom:1px solid var(--line)}
 .stat::after{content:counter(n,decimal-leading-zero);position:absolute;right:32px;top:34px;font-size:.75rem;letter-spacing:.1em;color:var(--dim)}
 
@@ -329,11 +331,11 @@ footer a:hover{color:var(--tan)}
 .fade.in{opacity:1;transform:none}
 
 @media (max-width:900px){
-  .stat::after{right:18px;top:24px}
+  .stat{grid-template-columns:1fr;padding:22px 18px}.stat .s2{padding-right:36px}.stat::after{right:18px;top:24px}
   header.top{padding:0 16px;gap:12px;height:58px}header nav,.ticker{display:none}.cta{margin-left:auto;height:44px;padding:0 16px}.ghost{height:44px}.arrows button{width:52px;height:44px}
   .wrap,.mission .pin,.sofar .label,.work .top,.timeline .label,.profiles .label{padding-left:18px;padding-right:18px}
   .mission .pin{padding-top:110px}
-  .stat{padding:22px 18px}.rail{padding:0 18px 10px}.track{padding:0 18px}
+  .stat{}.rail{padding:0 18px 10px}.track{padding:0 18px}
   .results{grid-template-columns:1fr}
   .prow{grid-template-columns:1fr auto;padding:20px 18px}.prow .t{grid-column:1;grid-row:2}.prow .go{grid-row:1;grid-column:2}.prow:hover{padding-left:18px}
   .timeline .pin{position:static;height:auto;padding:90px 0 40px}
@@ -389,11 +391,11 @@ footer a:hover{color:var(--tan)}
 
 <section class="sofar" id="sofar" data-theme="dark">
   <div class="label">So far</div>
-  <div class="stat">Founder &amp; CEO<br>OfficeSwap</div>
-  <div class="stat">Co-Founder<br>MirRehab</div>
-  <div class="stat">Admitted to MIT URTC<br>Undergraduate program, 2026</div>
-  <div class="stat">AUC 0.998<br>Leave-one-donor-out</div>
-  <div class="stat">3&times; VEX IQ<br>World Championships</div>
+  <div class="stat"><span class="s1">Founder &amp; CEO</span><span class="s2">OfficeSwap</span></div>
+  <div class="stat"><span class="s1">Co-Founder</span><span class="s2">MirRehab</span></div>
+  <div class="stat"><span class="s1">Admitted to MIT URTC</span><span class="s2">Undergraduate program, 2026</span></div>
+  <div class="stat"><span class="s1">AUC 0.998</span><span class="s2">Leave-one-donor-out</span></div>
+  <div class="stat"><span class="s1">3&times; VEX IQ</span><span class="s2">World Championships</span></div>
 </section>
 
 <section class="work" id="work" data-theme="dark">
