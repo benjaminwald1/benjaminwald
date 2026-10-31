@@ -225,6 +225,9 @@ h1.name .ch:hover{color:var(--fg)}
 .stat .s1{font-size:.8125rem;letter-spacing:.08em;color:var(--tan)}
 .stat .s2{font-size:clamp(1.5rem,3.2vw,3rem);line-height:1.15;letter-spacing:-.025em;padding-right:48px}
 .stat:last-child{border-bottom:1px solid var(--line)}
+a.stat .s2::after{content:"\2197";display:inline-block;margin-left:.3em;font-size:.55em;vertical-align:.45em;color:var(--dim);transition:transform .45s var(--ease),color .3s}
+a.stat:hover .s2::after{transform:translate(5px,-5px);color:var(--tan)}
+a.stat:hover .s2{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.15em;text-decoration-color:var(--tan)}
 .stat::after{content:counter(n,decimal-leading-zero);position:absolute;right:32px;top:34px;font-size:.75rem;letter-spacing:.1em;color:var(--dim)}
 
 /* work cards */
@@ -391,8 +394,8 @@ footer a:hover{color:var(--tan)}
 
 <section class="sofar" id="sofar" data-theme="dark">
   <div class="label">So far</div>
-  <div class="stat"><span class="s1">Founder &amp; CEO</span><span class="s2">OfficeSwap</span></div>
-  <div class="stat"><span class="s1">Co-Founder</span><span class="s2">MirRehab</span></div>
+  <a class="stat" href="https://officeswap.co"><span class="s1">Founder &amp; CEO</span><span class="s2">OfficeSwap</span></a>
+  <a class="stat" href="https://mirrehab.com"><span class="s1">Co-Founder</span><span class="s2">MirRehab</span></a>
   <div class="stat"><span class="s1">Admitted, 2026</span><span class="s2">Undergraduate MIT URTC program</span></div>
   <div class="stat"><span class="s1">Research result</span><span class="s2">AUC 0.998, leave-one-donor-out</span></div>
   <div class="stat"><span class="s1">Robotics, 2021&ndash;2023</span><span class="s2">VEX IQ World Championships, 3&times;</span></div>
