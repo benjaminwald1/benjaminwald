@@ -218,17 +218,17 @@ h1.name .ch:hover{color:var(--fg)}
 .pcap{font-size:13px;min-height:2.6em;text-align:center;max-width:26em;padding:0 20px}
 
 /* so far */
-.sofar{background:var(--bg);padding:140px 0 160px;position:relative}
-.sofar .label{padding:0 32px;margin-bottom:60px}
+.sofar{background:var(--bg);padding:110px 0 120px;position:relative}
+.sofar .label{padding:0 32px;margin-bottom:36px}
 .sofar{counter-reset:n}
-.stat{counter-increment:n;position:relative;display:grid;grid-template-columns:minmax(150px,300px) 1fr;gap:12px 32px;align-items:baseline;border-top:1px solid var(--line);padding:30px 32px;color:#fff;opacity:var(--o,.3);transition:opacity .15s linear}
-.stat .s1{font-size:.8125rem;letter-spacing:.08em;color:var(--tan)}
-.stat .s2{font-size:clamp(1.5rem,3.2vw,3rem);line-height:1.15;letter-spacing:-.025em;padding-right:48px}
+.stat{counter-increment:n;position:relative;display:grid;grid-template-columns:minmax(150px,260px) 1fr;gap:10px 32px;align-items:baseline;border-top:1px solid var(--line);padding:22px 32px;color:#fff;opacity:var(--o,.3);transition:opacity .15s linear}
+.stat .s1{font-size:.75rem;letter-spacing:.08em;color:var(--tan)}
+.stat .s2{font-size:clamp(1.15rem,2vw,1.85rem);line-height:1.25;letter-spacing:-.015em;padding-right:48px}
 .stat:last-child{border-bottom:1px solid var(--line)}
 a.stat .s2::after{content:"\2197";display:inline-block;margin-left:.3em;font-size:.55em;vertical-align:.45em;color:var(--dim);transition:transform .45s var(--ease),color .3s}
 a.stat:hover .s2::after{transform:translate(5px,-5px);color:var(--tan)}
 a.stat:hover .s2{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.15em;text-decoration-color:var(--tan)}
-.stat::after{content:counter(n,decimal-leading-zero);position:absolute;right:32px;top:34px;font-size:.75rem;letter-spacing:.1em;color:var(--dim)}
+.stat::after{content:counter(n,decimal-leading-zero);position:absolute;right:32px;top:26px;font-size:.75rem;letter-spacing:.1em;color:var(--dim)}
 
 /* work cards */
 .work{background:var(--bg);padding:20px 0 140px;position:relative}
